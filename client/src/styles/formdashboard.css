@@ -1,0 +1,15 @@
+.form-dashboard {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 70%;
+}
+
+.submit-form {
+  margin: 1rem;
+  padding: 0.5rem;
+  background-color: var(--bg-button);
+  border: none;
+  color: var(--secondary-color);
+  border-radius: var(--button-radius);
+}

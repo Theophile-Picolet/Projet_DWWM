@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --body-font: Poppins, sans-serif;
+  --font-size: 14px;
+  --primary-color: black;
+  --bg-button: #7e7e7e;
+  --secondary-color: white;
+  --button-radius: 8px;
+}
+
+body {
+  font-size: var(--font-size);
+  line-height: 1.7;
+  font-family: var(--body-font);
+  padding: 1rem;
+  margin: 0 auto;
+
+  a {
+    text-decoration: none;
+    color: var(--secondary-color);
+  }
+  ul,
+  ol {
+    list-style: none;
+  }
+}
+@media only screen and (min-width: 400px) {
+  body {
+    padding: 1rem 0;
+    max-width: 75vw;
+  }
+}

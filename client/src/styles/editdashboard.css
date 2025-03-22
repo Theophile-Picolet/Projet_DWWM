@@ -1,0 +1,21 @@
+.list-movie {
+  display: flex;
+  flex-direction: column;
+}
+.movie-edit {
+  border: solid 1px #7e7e7e;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.movie-edit > button {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border-radius: var(--button-radius);
+  border: none;
+  padding: 0.5rem 0.5rem;
+}

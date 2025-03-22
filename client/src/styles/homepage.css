@@ -1,0 +1,200 @@
+.all-element {
+  padding: 1rem;
+}
+.input-mail {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  a {
+    background-color: var(--bg-button);
+    color: var(--secondary-color);
+    padding: 1rem;
+    margin-top: 0.7rem;
+    border-radius: var(--button-radius);
+  }
+}
+
+.top-element {
+  text-align: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+}
+
+.top-element > h1 {
+  font-size: 2rem;
+  margin: 1rem;
+}
+
+.top-element > p {
+  margin-top: 2rem;
+}
+
+.input-mail > input {
+  padding: 1rem;
+}
+
+.arrow {
+  min-height: 3rem;
+  min-width: 3rem;
+  padding: 3rem;
+  margin: 0 auto;
+}
+.movie-container {
+  display: flex;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  scrollbar-color: #76767639 transparent;
+  scrollbar-width: thin;
+  gap: 1rem;
+  margin: 1rem 0;
+  min-height: auto;
+}
+
+.card-movie-img p {
+  color: #767676;
+  font-size: 12px;
+}
+
+section > h2 {
+  text-align: center;
+  margin: 1rem;
+}
+
+.offer {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.free > p:not(:first-child) {
+  opacity: 30%;
+}
+
+.content {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.offer > button {
+  border: none;
+  font-size: large;
+  background: none;
+}
+
+.middle-element > h2 {
+  line-height: 1.7rem;
+}
+.button.active {
+  border-bottom: 2px solid black;
+}
+
+.bottom-element {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem;
+  margin-top: 2rem;
+  a {
+    background-color: var(--bg-button);
+    color: var(--secondary-color);
+    padding: 0.5rem;
+    margin-top: 0.7rem;
+    border-radius: var(--button-radius);
+  }
+}
+
+.all-element {
+  background: url("bg-header.png");
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+@media only screen and (min-width: 792px) {
+  .all-element {
+    display: flex;
+    margin: 5rem;
+    height: 100%;
+    justify-content: space-between;
+    gap: 4rem;
+    background-image: none;
+  }
+
+  .bottom-element {
+    display: none;
+  }
+
+  .middle-element {
+    background-image: url("/bg-desktop.svg");
+    background-size: cover;
+    border-radius: var(--button-radius);
+    width: 70%;
+    color: var(--secondary-color);
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .top-element {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% / 3);
+    text-align: left;
+  }
+  .top-element > h2 {
+    text-align: left;
+    margin: 0;
+    margin-top: 1rem;
+  }
+  .arrow {
+    display: none;
+  }
+
+  .button-middle {
+    border: none;
+    background-color: black;
+    color: var(--secondary-color);
+    padding: 0.5rem;
+    width: 15rem;
+    border-radius: var(--button-radius);
+    margin-top: 4rem;
+  }
+
+  .middle-element > h2 {
+    margin-top: 4rem;
+  }
+
+  .top-element > h1 {
+    font-size: 2rem;
+  }
+
+  .offer > button {
+    color: var(--secondary-color);
+  }
+
+  .input-mail > a {
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .input-mail > input {
+    padding: 1rem;
+  }
+}
+
+@media only screen and (max-width: 792px) {
+  .button-middle {
+    display: none;
+  }
+
+  .input-mail {
+    margin: 1rem;
+    margin-top: 2rem;
+    img {
+      display: none;
+    }
+  }
+}

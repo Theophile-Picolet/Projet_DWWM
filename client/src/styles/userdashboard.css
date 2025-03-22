@@ -1,0 +1,8 @@
+.user-dashboard {
+  background-color: #7e7e7e;
+  padding: 0.5rem;
+  border-radius: var(--button-radius);
+  color: var(--secondary-color);
+  width: 88%;
+  margin: 0 auto;
+}

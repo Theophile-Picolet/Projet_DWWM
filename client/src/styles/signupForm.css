@@ -1,0 +1,98 @@
+form {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  background-color: var(--secondary-color);
+  border-radius: 5px;
+  padding: 1rem;
+  width: 326px;
+  h1 {
+    text-align: left;
+  }
+  h3 {
+    font-size: 0.9rem;
+    font-style: oblique;
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+  }
+  label {
+    display: flex;
+    align-items: flex-start;
+  }
+  label > p {
+    color: red;
+  }
+  input {
+    padding: 0.5rem;
+    width: 100%;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+  }
+  input[type="email"]:invalid {
+    outline-color: red;
+  }
+  input[type="email"]:valid {
+    outline-color: green;
+  }
+  .password-input {
+    position: relative;
+  }
+  .password-input > button {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 66%;
+    right: 1%;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  .checkbox {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+  .checkbox > input {
+    width: auto;
+    margin: 0.5rem;
+    cursor: pointer;
+  }
+  .checkbox > p {
+    color: var(--primary-color);
+    font-size: 0.5rem;
+  }
+  .submit {
+    padding: 0.5rem;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .submit:disabled {
+    background-color: var(--primary-color);
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  .submit:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: 0.2s ease;
+  }
+  a {
+    color: var(--primary-color);
+    opacity: 0.6;
+    margin-top: 0.5rem;
+    text-align: center;
+  }
+  a:hover {
+    color: var(--primary-color);
+    opacity: 1;
+  }
+  input[type="email"]:invalid {
+    outline-color: red;
+  }
+  input[type="email"]:valid {
+    outline-color: green;
+  }
+}

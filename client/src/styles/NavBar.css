@@ -1,0 +1,22 @@
+nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  img {
+    width: 50px;
+  }
+  a {
+    border-radius: var(--button-radius);
+    padding: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background: var(--bg-button);
+    border: none;
+    font-size: 12px;
+    font-weight: 500;
+    font-family: var(--body-font);
+    letter-spacing: 0.6px;
+    color: var(--secondary-color);
+  }
+}
