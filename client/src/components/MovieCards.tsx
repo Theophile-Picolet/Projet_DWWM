@@ -22,7 +22,7 @@ export default function MovieCards({ movie }: MoviesProps) {
           <img src={movie.poster} alt="" />
         </Link>
         <p className="movie-title">{movieTitle}</p>
-        <p>
+        <p className="movie-p">
           {movie.release_year} - {firstGenre}
         </p>
       </div>

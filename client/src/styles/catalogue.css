@@ -1,140 +1,47 @@
-.movie-container::after {
-  background-color: rgb(161, 161, 161);
-  position: absolute;
-  display: block;
-  height: 1px;
-  width: 90%;
-  content: "";
-  transform: translateY(15rem);
+.show-movies {
+  margin-left: 1rem;
 }
-
-.movie-container:last-of-type::after {
-  display: none;
+.catalogue {
+  background: url("bg-header.png");
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
 
 .decouvrir-nos-offres {
   border: none;
-  background-color: black;
-  color: var(--secondary-color);
-  padding: 0.5rem;
-  width: 10rem;
+  background-color: var(--bg-button);
+  padding: 1rem;
+  width: 90%;
   border-radius: var(--button-radius);
   text-align: center;
-  display: flex;
-  justify-content: center;
-  transform: translateY(-7rem);
 }
 
 .first-container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  margin-top: 2rem;
-  button {
-    margin-top: 2rem;
+  text-align: center;
+  gap: 3rem;
+  margin: 2rem 1rem 4rem 1rem;
+  h1 {
+    font-size: 32px;
+    font-weight: 600;
   }
-  a {
-    color: var(--secondary-color);
-  }
-}
-
-.first-container svg {
-  position: absolute;
-  transform: translateY(-4.1rem) translateX(1.5rem);
-}
-
-.first-container .img-container {
-  max-height: 42rem;
-  max-width: 100%;
-}
-
-.show-movies h2 {
-  margin-top: 1rem;
-  font-size: 18px;
-}
-
-.show-movies h2:first-of-type {
-  margin-top: 0;
-}
-
-.show-movies .movie-container {
-  margin-bottom: 2rem;
-}
-
-.connection-bottom {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-image: url("/bg-desktop.svg");
-  padding: 1rem;
-  padding-bottom: 2rem;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-radius: var(--button-radius);
-  margin: 5rem 0;
-  h2 {
-    color: var(--secondary-color);
-    font-weight: 500;
-    font-size: 1.8rem;
-  }
-}
-
-.bottom-container {
-  display: flex;
-  flex-direction: row;
-  align-content: center;
   p {
-    color: var(--secondary-color);
+    margin: 0 1rem;
   }
-
-  .bottom-left,
-  .bottom-right {
-    text-align: center;
-  }
-
-  h3 {
-    color: var(--secondary-color);
-    font-weight: 400;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-  }
-  .bottom-free {
-    color: rgb(108, 108, 108);
-  }
-}
-.separation {
-  background-color: black;
-  position: relative;
-  display: block;
-  height: 1px;
-  width: 150px;
-  content: "";
-  transform: rotate(90deg) translateX(5rem);
-}
-
-.button-bottom {
-  background-color: black;
-  width: auto;
-  color: var(--secondary-color);
-  border: none;
-  padding: 1rem 2rem;
-  margin-top: 2rem;
-  border-radius: var(--button-radius);
-}
-
-.movie-card {
-  flex: 1 1 200px;
-}
-
-.movie-container {
-  background-color: bisque;
 }
 
 .card-movie-img {
-  background-color: aqua;
+  height: auto;
+  width: 13.5rem;
+  margin: 0;
 }
 .card-movie-img .movie-title {
   font-size: 14px;
+  color: black;
 }
 
 .card-movie-img img {
@@ -144,24 +51,60 @@
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px
     8px 16px -8px;
 }
-
-@media only screen and (min-width: 400px) {
-  .card-movie-img img {
-    height: 18rem;
-    width: 13.5rem;
-    margin: 2rem 2rem 2rem 0;
-  }
+.bottom-container {
+  display: none;
+}
+.footer {
+  text-align: center;
 }
 
-/* @media only screen and (min-width: 1440px) {
-  .movie-container::after {
-    width: 91.5%;
-    content: "";
-    transform: translateY(30rem);
-    display: block;
+.connection-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h2 {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: normal;
+  }
+}
+.button-bottom {
+  border: none;
+  background-color: var(--bg-button);
+  padding: 1rem;
+  width: 80%;
+  border-radius: var(--button-radius);
+  text-align: center;
+  margin: 2rem 0 1rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .catalogue {
+    background: url();
   }
 
   .show-movies h2 {
-    margin-top: 5rem;
+    font-size: 21px;
   }
-}  */
+  .card-movie-img {
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+  }
+  .card-movie-img img {
+    height: 18rem;
+    width: 13.5rem;
+  }
+  .card-movie-img .movie-title {
+    font-size: 16px;
+  }
+  .card-movie-img .movie-p {
+    font-size: 14px;
+  }
+
+  section .middle-element {
+    display: none;
+  }
+  .bottom-container {
+    display: flex;
+  }
+}

@@ -11,10 +11,7 @@ export default function HomePage() {
     <section className="all-element">
       <section className="top-element">
         <h1>L’original au service du digital</h1>
-        <p>
-          Profitez d' un catalogue qui contient le meilleur du cinéma. Saisissez
-          votre adresse e-mail pour nous rejoindre.
-        </p>
+        <p>Profitez d' un catalogue qui contient le meilleur du cinéma.</p>
         <div className="input-mail">
           <img src="/image-homepage.png" alt="" />
         </div>
@@ -67,7 +64,7 @@ export default function HomePage() {
       </section>
       <div className="bottom-element">
         <h2>N' attendez plus!</h2>
-        <Link to="/">Se connecter</Link>
+        <Link to="/">NOUS REJOINDRE</Link>
       </div>
     </section>
   );
