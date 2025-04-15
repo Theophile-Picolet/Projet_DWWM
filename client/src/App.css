@@ -6,20 +6,28 @@
 
 :root {
   --body-font: Poppins, sans-serif;
+  --title-font: Roboto, sans-serif;
   --font-size: 14px;
-  --primary-color: black;
-  --bg-button: #7e7e7e;
+  --primary-color: rgb(107, 107, 107);
+  --bg-button: #6c6c6c;
+  --bg-color: #fbfeff;
   --secondary-color: white;
-  --button-radius: 6px;
+  --button-radius: 12px;
 }
 
 body {
+  background-color: var(--bg-color);
   font-size: var(--font-size);
   line-height: 1.7;
   font-family: var(--body-font);
   margin: 0 auto;
   h2 {
     font-size: 18px;
+  }
+  h1,
+  h2,
+  h3 {
+    color: var(--primary-color);
   }
 
   a {
@@ -36,11 +44,6 @@ body {
     list-style: none;
   }
 }
-@media only screen and (min-width: 400px) {
-  body {
-    padding: 1rem 0;
-    max-width: 75vw;
-  }
-}
+
 /* @media only screen and (min-width: 768px) {
 } */

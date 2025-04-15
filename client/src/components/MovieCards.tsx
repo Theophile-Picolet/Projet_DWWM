@@ -7,23 +7,27 @@ export default function MovieCards({ movie }: MoviesProps) {
       behavior: "instant",
     });
   };
-  const firstGenre = movie.genres.split(",")[0];
+  const genres = movie.genres;
   const truncateText = (text: string, maxLength: number) => {
     if (text.length <= maxLength) {
       return text;
     }
     return `${text.substring(0, maxLength)}...`;
   };
-  const movieTitle = truncateText(movie.title, 15);
+  const movieTitle = truncateText(movie.title, 20);
   return (
     <>
-      <div className="card-movie-img">
+      <div className="card-movie">
         <Link to={`/movies/${movie.id}`} onClick={scrollToTop}>
-          <img src={movie.poster} alt="" />
+          <div
+            className="background-card"
+            style={{ backgroundImage: `url(${movie.landscape_image})` }}
+          >
+            <p className="movie-title">{movieTitle}</p>
+          </div>
         </Link>
-        <p className="movie-title">{movieTitle}</p>
         <p className="movie-p">
-          {movie.release_year} - {firstGenre}
+          {movie.release_year} -{genres}
         </p>
       </div>
     </>

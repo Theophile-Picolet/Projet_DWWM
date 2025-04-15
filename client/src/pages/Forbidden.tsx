@@ -1,3 +1,3 @@
 export default function Forbidden() {
-  return <h1>Accés interdit</h1>;
+  return <h1>Accès interdit</h1>;
 }
