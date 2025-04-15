@@ -143,8 +143,8 @@ VALUES
 
 insert into user ( first_name, last_name, email, hashed_password, subscription, role)
 VALUES
-("Brayan", "Fagete", "adminod@gmail.com","$argon2id$v=19$m=19456,t=2,p=1$bu7ilozTjfTl0BIpGcpf+w$9EfzE01omfSwpvC7PGLuH/3mtmjQF1V7n5b8Yc4QoI0", "0", "administrateur"),
-("Alex", "Taranne", "wild@gmail.com", "$argon2id$v=19$m=19456,t=2,p=1$bu7ilozTjfTl0BIpGcpf+w$9EfzE01omfSwpvC7PGLuH/3mtmjQF1V7n5b8Yc4QoI0", "0", "utilisateur" );
+("Theo", "Pico", "adminod@gmail.com","$argon2id$v=19$m=19456,t=2,p=1$bu7ilozTjfTl0BIpGcpf+w$9EfzE01omfSwpvC7PGLuH/3mtmjQF1V7n5b8Yc4QoI0", "0", "administrateur"),
+("Chris", "Barth", "wild@gmail.com", "$argon2id$v=19$m=19456,t=2,p=1$bu7ilozTjfTl0BIpGcpf+w$9EfzE01omfSwpvC7PGLuH/3mtmjQF1V7n5b8Yc4QoI0", "0", "utilisateur" );
 insert into genre (name)
 VALUES
 ("Action"), ("Horreur"), ("Science-fiction"), ("Drame"), ("Romance"), ("Comédie"), ("Aventure"), ("Jeunesse"), ("Thriller"), ("Policier"), ("Criminel"), ("Fantastique"), ("Comédie musical"), ("Film d'animation"), ("Guerre"), ("Thriller érotique"), ("Prison"), ("Western");

@@ -69,3 +69,14 @@ h2 {
   gap: 1rem;
   display: flex;
 }
+
+@media only screen and (min-width: 768px) {
+  .same-genre {
+    display: flex;
+    flex-direction: row;
+    img {
+      width: 15rem;
+      height: auto;
+    }
+  }
+}
