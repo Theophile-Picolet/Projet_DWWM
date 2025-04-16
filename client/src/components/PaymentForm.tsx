@@ -33,7 +33,7 @@ export default function PaymentForm() {
   };
 
   const handleChangeCardNumber = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value.replaceAll(" ", "");
+    const value = e.target.value.replace(/ /g, "");
     let formattedValue = "";
     for (let i = 0; i < value.length; i++) {
       if (i > 0 && i % 4 === 0) {

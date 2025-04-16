@@ -61,52 +61,52 @@ export default function Catalogue() {
           </button>
         )}
       </div>
-
-      <div className="show-movies">
-        <h2>Films gratuits</h2>
-        <section className="movie-container">
-          {freeMovies.map((movie) => (
-            <MovieCards key={movie.id} movie={movie} />
-          ))}
-        </section>
-
-        <h2>Tendances Actuelles</h2>
-        <section className="movie-container">
-          {sfMovies.map((movie) => (
-            <MovieCards key={movie.id} movie={movie} />
-          ))}
-        </section>
-
-        <h2>Films Premium</h2>
-        <section className="movie-container">
-          {premiumMovies.map((movie) => (
-            <MovieCards key={movie.id} movie={movie} />
-          ))}
-        </section>
-
-        <h2>Ma Liste</h2>
-        {moviesWatchlist.length > 0 ? (
+      <div className="catalogue">
+        <div className="show-movies">
+          <h2>Films gratuits</h2>
           <section className="movie-container">
-            {moviesWatchlist.map((movie) => (
-              <div className="watchlist-movie" key={movie.id}>
-                <MovieCards key={movie.id} movie={movie} />
-                {/* Bouton pour supprimer un film de la watchlist */}
-                <button
-                  type="button"
-                  className="delete-favorite-button"
-                  onClick={() => handleRemoveFavorite(movie.id)}
-                  aria-label="Supprimer des favoris"
-                >
-                  ❌
-                </button>
-              </div>
+            {freeMovies.map((movie) => (
+              <MovieCards key={movie.id} movie={movie} />
             ))}
           </section>
-        ) : (
-          <p>Aucun film dans votre liste.</p>
-        )}
-      </div>
 
+          <h2>Tendances actuelles</h2>
+          <section className="movie-container">
+            {sfMovies.map((movie) => (
+              <MovieCards key={movie.id} movie={movie} />
+            ))}
+          </section>
+
+          <h2>Films premiums</h2>
+          <section className="movie-container">
+            {premiumMovies.map((movie) => (
+              <MovieCards key={movie.id} movie={movie} />
+            ))}
+          </section>
+
+          <h2>Ma Liste</h2>
+          {moviesWatchlist.length > 0 ? (
+            <section className="movie-container">
+              {moviesWatchlist.map((movie) => (
+                <div className="watchlist-movie" key={movie.id}>
+                  <MovieCards key={movie.id} movie={movie} />
+                  {/* Bouton pour supprimer un film de la watchlist */}
+                  <button
+                    type="button"
+                    className="delete-favorite-button"
+                    onClick={() => handleRemoveFavorite(movie.id)}
+                    aria-label="Supprimer des favoris"
+                  >
+                    ❌
+                  </button>
+                </div>
+              ))}
+            </section>
+          ) : (
+            <p>Aucun film dans votre liste.</p>
+          )}
+        </div>
+      </div>
       {!subscription && (
         <section id="acces" className="connection-bottom">
           <h2>Nos différentes souscriptions</h2>

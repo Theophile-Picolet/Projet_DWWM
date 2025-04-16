@@ -14,7 +14,7 @@ export default function MovieCards({ movie }: MoviesProps) {
     }
     return `${text.substring(0, maxLength)}...`;
   };
-  const movieTitle = truncateText(movie.title, 20);
+  const movieTitle = truncateText(movie.title, 25);
   return (
     <>
       <div className="card-movie">
