@@ -7,37 +7,26 @@ export default function MovieDetail() {
   const { movieId } = useLoaderData() as { movieId: MovieType };
   const { movies } = useLoaderData() as { movies: MovieType[] };
   const movieGenreId = movieId.genres.split(",")[0];
-  const sameGenre = movies.filter(
-    (movie) => movie.genres.split(",")[0] === movieGenreId,
+  const sameGenre = movies.filter((movie) =>
+    movie.genres.includes(movieGenreId),
   );
   return (
     <>
       <h1>Original digitals</h1>
-      <div className="container-movies">
-        <iframe
-          className="complete-movie"
-          width="100%"
-          height="315"
-          src={movieId.trailer}
-          title="YouTube video player"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerPolicy="strict-origin-when-cross-origin"
-          allowFullScreen
-        />
-        <h2>{movieId.title.toUpperCase()}</h2>
-        <div className="informations">
-          <p>{movieId.release_year}</p>
-          <p>{movieId.duration}</p>
-        </div>
-        <div className="bio">
-          <p>{movieId.synopsis.slice(0, 50)}...</p>
-          <details>
-            <summary>
-              <p>En savoir plus</p>
-            </summary>
-            <p>{movieId.synopsis.substring(50)}</p>
-          </details>
+      <div className="detail-container-movies">
+        <img src={movieId.poster} alt={movieId.title} />
+        <div className="container-middle">
+          <h2>{movieId.title.toUpperCase()}</h2>
+          <p>Genres : {movieId.genres}</p>
+          <div className="informations">
+            <p> Année : {movieId.release_year}</p>
+            <p>Durée : {movieId.duration}</p>
+          </div>
+          <div>
+            <p>Synopsis : {movieId.synopsis}</p>
+            <p>Maison de production : {movieId.production}</p>
+            <p>Casting : {movieId.casting}</p>
+          </div>
           <FavoriteButton movie={movieId} id={movieId.id} />
         </div>
       </div>
@@ -45,7 +34,7 @@ export default function MovieDetail() {
         <h2>Bande annonce</h2>
         <iframe
           className="short-movie"
-          width="100%"
+          width="25%"
           height="315"
           src={movieId.trailer}
           title="YouTube video player"
@@ -54,13 +43,15 @@ export default function MovieDetail() {
           referrerPolicy="strict-origin-when-cross-origin"
           allowFullScreen
         />
-      </div>{" "}
-      <h2>Dans la même catégorie</h2>
-      <section className="same-genre">
-        {sameGenre.map((movie) => (
-          <MovieCardDetail key={movie.id} movie={movie} />
-        ))}
-      </section>
+      </div>
+      <div className="same-categorie">
+        <h2>Dans la même catégorie</h2>
+        <section className="same-genre">
+          {sameGenre.map((movie) => (
+            <MovieCardDetail key={movie.id} movie={movie} />
+          ))}
+        </section>
+      </div>
     </>
   );
 }

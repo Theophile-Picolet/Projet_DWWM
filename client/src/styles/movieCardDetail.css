@@ -1,7 +1,5 @@
 @media only screen and (min-width: 768px) {
   .movie-card-detail {
-    background-color: rgb(9, 117, 117);
-    width: auto;
-    height: auto;
+    margin-right: 1rem;
   }
 }
