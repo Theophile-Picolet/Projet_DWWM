@@ -2,6 +2,7 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import "../styles/NavBar.css";
 import { useAuth } from "../services/AuthContext";
+import { useState } from "react";
 
 export default function NavBar() {
   const API = import.meta.env.VITE_API_URL;
@@ -21,19 +22,14 @@ export default function NavBar() {
 
   const links = [
     {
-      name: "Accueil",
+      name: "Original Digital",
       path: "/",
-      role: ["anonymous", "administrateur"],
+      role: ["anonymous", "utilisateur", "administrateur"],
     },
     {
       name: "Dashboard",
       path: "/dashboard",
       role: ["administrateur"],
-    },
-    {
-      name: "Se connecter",
-      path: "/login",
-      role: ["anonymous"],
     },
     {
       name: "catalogue",
@@ -42,22 +38,35 @@ export default function NavBar() {
     },
   ];
 
+  const [burger, setBurger] = useState(false);
+  const handleShowNav = () => {
+    setBurger(!burger);
+  };
+
   return (
     <nav>
       <img src="/Logo_OriginalDigital.webp" alt="logo" />
-      <ul>
-        {links
-          .filter((link) => link.role.includes(role))
-          .map((link) => (
-            <li key={link.name}>
-              <Link to={link.path}>{link.name}</Link>
-            </li>
-          ))}
-      </ul>
+      <div className={`navbar ${burger ? "show-nav" : "hide-nav"}`}>
+        <ul className="navbar-links">
+          {links
+            .filter((link) => link.role.includes(role))
+            .map((link) => (
+              <li key={link.name}>
+                <Link to={link.path}>{link.name}</Link>
+              </li>
+            ))}
+        </ul>
+
+        <button type="button" className="navbar-burger" onClick={handleShowNav}>
+          <span className="burger-bar" />
+        </button>
+      </div>{" "}
       {role === "anonymous" ? (
-        <Link to="/signup">Nous rejoindre</Link>
+        <Link className="seConnecter" to="/login">
+          Se connecter
+        </Link>
       ) : (
-        <button type="button" onClick={disconnect}>
+        <button className="connexion" type="button" onClick={disconnect}>
           Se déconnecter
         </button>
       )}
