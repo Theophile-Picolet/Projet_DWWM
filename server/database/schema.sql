@@ -143,7 +143,7 @@ VALUES
 
 insert into user ( first_name, last_name, email, hashed_password, subscription, role)
 VALUES
-("Theo", "Pico", "adminod@gmail.com","$argon2id$v=19$m=19456,t=2,p=1$bu7ilozTjfTl0BIpGcpf+w$9EfzE01omfSwpvC7PGLuH/3mtmjQF1V7n5b8Yc4QoI0", "0", "administrateur"),
+("Theo", "Pico", "adminod@gmail.com","$argon2id$v=19$m=19456,t=2,p=1$bu7ilozTjfTl0BIpGcpf+w$9EfzE01omfSwpvC7PGLuH/3mtmjQF1V7n5b8Yc4QoI0", "1", "administrateur"),
 ("Chris", "Barth", "wild@gmail.com", "$argon2id$v=19$m=19456,t=2,p=1$bu7ilozTjfTl0BIpGcpf+w$9EfzE01omfSwpvC7PGLuH/3mtmjQF1V7n5b8Yc4QoI0", "0", "utilisateur" );
 insert into genre (name)
 VALUES

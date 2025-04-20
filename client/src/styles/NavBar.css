@@ -42,21 +42,25 @@ nav {
 .navbar-links li {
   padding: 1rem 1.5rem;
   border-radius: var(--button-radius);
+  color: var(--bg-button);
+  transition: background-color 0.4s ease-out;
 }
 .navbar-links li:hover {
   background-color: var(--bg-button);
-  transition: 0.3s ease-in-out;
+  transition: background-color 0.2s ease-out;
   background-color: rgba(0, 0, 0, 0.047);
+  font-weight: 600;
 }
 
 .seConnecter {
   padding: 1rem 1.5rem;
   border-radius: var(--button-radius);
+  transition: background-color 0.2s ease-out;
 }
 
 .seConnecter:hover {
   background-color: var(--bg-button);
-  transition: 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out;
   background-color: rgba(0, 0, 0, 0.047);
 }
 

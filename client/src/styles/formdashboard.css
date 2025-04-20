@@ -2,14 +2,34 @@
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  width: 70%;
+  width: 50vw;
+  border-radius: var(--button-radius);
+  background-color: rgba(0, 0, 0, 0.047);
+  color: var(--bg-button);
+  font-size: 1.15rem;
+  font-weight: 600;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  input {
+    background-color: var(--bg-color);
+  }
 }
 
-.submit-form {
-  margin: 1rem;
-  padding: 0.5rem;
+input.submit-form {
+  margin: 1rem auto;
+  padding: 1rem;
   background-color: var(--bg-button);
   border: none;
   color: var(--secondary-color);
+  border: solid 1px var(--bg-button);
   border-radius: var(--button-radius);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+input.submit-form:hover {
+  background-color: var(--bg-button);
+  color: var(--bg-button);
+  transition: 0.2s ease-in-out;
+  background-color: rgba(0, 0, 0, 0.047);
 }
