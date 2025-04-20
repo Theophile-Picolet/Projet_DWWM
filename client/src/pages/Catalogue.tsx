@@ -50,12 +50,8 @@ export default function Catalogue() {
   return (
     <>
       <div className="first-container">
-        <img
-          src="/Background_connection.jpg"
-          className="img-container"
-          alt=""
-        />
-        {!subscription && (
+        <div className="oDigital">ORIGINAL DIGITAL</div>
+        {subscription && (
           <button type="button" className="decouvrir-nos-offres">
             <a href="#acces">Découvrir nos offres</a>
           </button>
@@ -107,7 +103,7 @@ export default function Catalogue() {
           )}
         </div>
       </div>
-      {!subscription && (
+      {subscription && (
         <section id="acces" className="connection-bottom">
           <h2>Nos différentes souscriptions</h2>
           <div className="bottom-container">
