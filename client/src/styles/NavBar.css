@@ -1,149 +1,70 @@
-nav {
-  position: fixed;
-  top: 0;
-  z-index: 1000;
-  background-color: var(--bg-color);
-  width: 100%;
-  padding: 1rem 1rem 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  img {
-    width: 50px;
-  }
-  a {
-    color: var(--secondary);
-    font-size: 18px;
-  }
-  .connexion {
-    border: 1px solid var(--bg-button);
-    padding: 0;
-    cursor: pointer;
-    font-size: 18px;
-    transform: translateY(-10px);
-    padding: 1rem;
-    background: var(--bg-button);
-    color: var(--secondary-color);
-    border-radius: var(--button-radius);
-  }
-  .connexion:hover {
-    background: var(--secondary-color);
-    color: var(--bg-button);
-    border: 1px solid var(--bg-button);
-    transition: 0.2s ease-in-out;
-  }
-}
-.navbar-links {
-  display: flex;
-  flex-direction: row;
-}
-
-.navbar-links li {
-  padding: 1rem 1.5rem;
-  border-radius: var(--button-radius);
-  color: var(--bg-button);
-  transition: background-color 0.4s ease-out;
-}
-.navbar-links li:hover {
-  background-color: var(--bg-button);
-  transition: background-color 0.2s ease-out;
-  background-color: rgba(0, 0, 0, 0.047);
-  font-weight: 600;
-}
-
-.seConnecter {
-  padding: 1rem 1.5rem;
-  border-radius: var(--button-radius);
-  transition: background-color 0.2s ease-out;
-}
-
-.seConnecter:hover {
-  background-color: var(--bg-button);
-  transition: background-color 0.2s ease-in-out;
-  background-color: rgba(0, 0, 0, 0.047);
-}
-
-.nabvar-burger {
-  display: none;
-}
-
-/* @media only screen and (max-width: 792px) {
-  .menu-container {
+@media only screen and (min-width: 768px) {
+  nav {
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--bg-color);
+    width: 100%;
+    padding: 1rem 1rem 0;
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    position: relative;
+    img {
+      width: 50px;
+    }
+    a {
+      color: var(--secondary);
+      font-size: 18px;
+    }
+    .seConnecter,
+    .connexion {
+      border: 1px solid var(--bg-button);
+      padding: 0;
+      cursor: pointer;
+      font-size: 18px;
+      transform: translateY(-10px);
+      padding: 1rem;
+      background: var(--bg-button);
+      color: var(--secondary-color);
+      border-radius: var(--button-radius);
+      border: 2px solid var(--bg-button);
+      transition: 0.2s ease-out;
+    }
+    .seConnecter:hover,
+    .connexion:hover {
+      background: var(--bg-color);
+      color: var(--bg-button);
+      transition: 0.2s ease-out;
+    }
   }
   .navbar-links {
-    background-color: rgba(0, 0, 0, 0.25);
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 1rem;
-    border: none;
-    border-bottom-right-radius: 20px;
-    border-bottom-left-radius: 20px;
-    padding: 1rem;
-    position: fixed;
-    top: 11rem;
-    right: -100vw;
-    z-index: 1000;
-    height: auto;
-    visibility: hidden;
-    transition: 1.8s ease-out;
+    flex-direction: row;
   }
 
-  .show-nav .navbar-links {
-    visibility: visible;
-    top: 11rem;
-    right: 0;
-    min-width: 161px;
-    transition: 0.8s ease;
+  .navbar-links li {
+    padding: 1rem 1.5rem;
+    border-radius: var(--button-radius);
+    color: var(--bg-button);
+    transition: background-color 0.4s ease-out;
+  }
+  .navbar-links li:hover {
+    background-color: var(--bg-button);
+    transition: background-color 0.2s ease-out;
+    background-color: rgba(0, 0, 0, 0.047);
+    font-weight: 600;
   }
 
-  .navbar-burger {
-    display: block;
-    width: 40px;
-    height: 40px;
-    border: none;
-  }
-  .navbar-burger:hover {
-    cursor: pointer;
+  .seConnecter {
+    padding: 1rem 1.5rem;
+    border-radius: var(--button-radius);
+    transition: background-color 0.2s ease-out;
   }
 
-  .burger-bar,
-  .burger-bar::before,
-  .burger-bar::after {
-    display: block;
-    width: 40px;
-    height: 3px;
-    position: relative;
-    background-color: #000000;
-    transition: all 0.5s ease-in-out;
+  .seConnecter:hover {
+    background-color: var(--bg-button);
+    transition: background-color 0.2s ease-in-out;
+    background-color: rgba(0, 0, 0, 0.047);
   }
-
-  .burger-bar::before,
-  .burger-bar::after {
-    content: "";
-    position: absolute;
-  }
-  .burger-bar::before {
-    transform: translateY(-12px);
-  }
-
-  .burger-bar::after {
-    transform: translateY(12px);
-  }
-
-  .show-nav .burger-bar {
-    background: transparent;
-    width: 0;
-  }
-
-  .show-nav .burger-bar::before {
-    transform: rotate(45deg);
-  }
-  .show-nav .burger-bar::after {
-    transform: rotate(-45deg);
-  }
-} */
+}

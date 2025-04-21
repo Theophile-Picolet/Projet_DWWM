@@ -32,21 +32,16 @@ export default function NavBar() {
       role: ["administrateur"],
     },
     {
-      name: "catalogue",
+      name: "Catalogue",
       path: "/catalogue",
       role: ["utilisateur", "administrateur"],
     },
   ];
 
-  const [burger, setBurger] = useState(false);
-  const handleShowNav = () => {
-    setBurger(!burger);
-  };
-
   return (
     <nav>
       <img src="/Logo_OriginalDigital.webp" alt="logo" />
-      <div className={`navbar ${burger ? "show-nav" : "hide-nav"}`}>
+      <div>
         <ul className="navbar-links">
           {links
             .filter((link) => link.role.includes(role))
@@ -57,7 +52,7 @@ export default function NavBar() {
             ))}
         </ul>
 
-        <button type="button" className="navbar-burger" onClick={handleShowNav}>
+        <button type="button">
           <span className="burger-bar" />
         </button>
       </div>{" "}

@@ -7,10 +7,11 @@
 :root {
   --body-font: Poppins, sans-serif;
   --title-font: Segoe UI, sans-serif;
-  --font-size: 14px;
+  --font-size: 16px;
   --primary-color: rgb(107, 107, 107);
   --bg-button: #6c6c6c;
   --bg-color: #fbfeff;
+  --title-color: rgba(0, 0, 0, 0.7);
   --secondary-color: white;
   --button-radius: 12px;
 }

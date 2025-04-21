@@ -1,8 +1,46 @@
+.all-element {
+  margin-top: 7.4rem;
+}
+
 .top-element {
   text-align: center;
   background-size: cover;
   display: flex;
   flex-direction: column;
+  .inscription {
+    color: var(--title-color);
+    font-size: 1.1rem;
+    margin: 0 auto;
+    width: 22rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-align: center;
+    padding: 0.5rem;
+    background: var(--bg-button);
+    color: var(--bg-color);
+    transition: 0.2s ease-out;
+    border-radius: var(--button-radius);
+    border: 2px solid var(--bg-button);
+    cursor: pointer;
+  }
+  .inscription:hover {
+    background: var(--bg-color);
+    color: var(--bg-button);
+    transition: 0.2s ease-out;
+  }
+  .arrow {
+    filter: brightness(0.75);
+    min-height: 3rem;
+    min-width: 3rem;
+    padding: 3rem;
+    margin: 0 auto;
+  }
+  .img-homepage {
+    display: none;
+  }
+  h2 {
+    display: none;
+  }
 }
 
 .top-element > h1 {
@@ -14,12 +52,6 @@
   margin: 2rem 1rem;
 }
 
-.arrow {
-  min-height: 3rem;
-  min-width: 3rem;
-  padding: 3rem;
-  margin: 0 auto;
-}
 .movie-container {
   display: flex;
   overflow-y: hidden;
@@ -27,13 +59,12 @@
   scrollbar-color: #76767639 transparent;
   scrollbar-width: thin;
   gap: 1rem;
-  margin: 1rem 0;
+  margin: 1rem 0 1rem 1rem;
   min-height: auto;
-}
-
-.card-movie-img p {
-  color: #767676;
-  font-size: 12px;
+  .card-movie {
+    /* transform: scale(0.9); */
+    /* margin: 0; */
+  }
 }
 
 section > h2 {
@@ -63,7 +94,10 @@ section > h2 {
 }
 
 .middle-element > h2 {
-  line-height: 1.7rem;
+  font-size: 2rem;
+  line-height: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
 }
 .button.active {
   border-bottom: 2px solid black;
@@ -73,15 +107,27 @@ section > h2 {
   text-align: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin: 1rem;
-  margin-top: 2rem;
-  a {
-    background-color: var(--bg-button);
-    color: var(--secondary-color);
+  .inscription {
+    color: var(--title-color);
+    font-size: 1.1rem;
+    margin: 0 auto;
+    width: 22rem;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 0.5px;
     padding: 0.5rem;
-    margin-top: 0.7rem;
+    background: var(--bg-button);
+    color: var(--bg-color);
+    transition: 0.2s ease-out;
     border-radius: var(--button-radius);
+    border: 2px solid var(--bg-button);
+    cursor: pointer;
+    margin-top: 1rem;
+  }
+  .inscription:hover {
+    background: var(--bg-color);
+    color: var(--bg-button);
+    transition: 0.2s ease-out;
   }
 }
 
@@ -92,7 +138,7 @@ section > h2 {
   background-size: contain;
 }
 
-@media only screen and (min-width: 792px) {
+@media only screen and (min-width: 1440px) {
   .all-element {
     display: flex;
     margin: 5rem;
@@ -108,13 +154,14 @@ section > h2 {
 
   .middle-element {
     background-image: url("/bg-desktop.svg");
-    background-size: cover;
-    border-radius: var(--button-radius);
-    width: 70%;
-    color: var(--secondary-color);
-    padding: 3rem;
     display: flex;
     flex-direction: column;
+    background-size: cover;
+    border-radius: var(--button-radius);
+    width: 900px;
+    height: auto;
+    color: var(--secondary-color);
+    padding: 3rem;
     align-items: center;
   }
 
@@ -162,11 +209,5 @@ section > h2 {
 
   .input-mail > input {
     padding: 1rem;
-  }
-}
-
-@media only screen and (max-width: 792px) {
-  .button-middle {
-    display: none;
   }
 }

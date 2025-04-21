@@ -8,49 +8,72 @@ export default function MovieDetail() {
   const { movies } = useLoaderData() as { movies: MovieType[] };
   const movieGenreId = movieId.genres.split(",")[0];
   const sameGenre = movies.filter((movie) =>
-    movie.genres.includes(movieGenreId),
+    movie.genres?.includes(movieGenreId),
   );
   return (
     <>
-      <h1>Original digitals</h1>
-      <div className="detail-container-movies">
-        <img src={movieId.poster} alt={movieId.title} />
-        <div className="container-middle">
-          <h2>{movieId.title.toUpperCase()}</h2>
-          <p>Genres : {movieId.genres}</p>
-          <div className="informations">
-            <p> Année : {movieId.release_year}</p>
-            <p>Durée : {movieId.duration}</p>
-          </div>
-          <div>
-            <p>Synopsis : {movieId.synopsis}</p>
-            <p>Maison de production : {movieId.production}</p>
-            <p>Casting : {movieId.casting}</p>
-          </div>
-          <FavoriteButton movie={movieId} id={movieId.id} />
+      <div className="detail-container">
+        <h1>Original digitals</h1>
+        <div className="trailer">
+          <iframe
+            className="short-movie"
+            width="1400px%"
+            height="600px"
+            src={movieId.trailer}
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          />
         </div>
-      </div>
-      <div className="trailer">
-        <h2>Bande annonce</h2>
-        <iframe
-          className="short-movie"
-          width="25%"
-          height="315"
-          src={movieId.trailer}
-          title="YouTube video player"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerPolicy="strict-origin-when-cross-origin"
-          allowFullScreen
-        />
-      </div>
-      <div className="same-categorie">
-        <h2>Dans la même catégorie</h2>
-        <section className="same-genre">
-          {sameGenre.map((movie) => (
-            <MovieCardDetail key={movie.id} movie={movie} />
-          ))}
-        </section>
+
+        <div className="detail-container-movies">
+          <img src={movieId.poster} alt={movieId.title} />
+          <div className="container-middle">
+            <h2>{movieId.title.toUpperCase()}</h2>
+            <p>
+              <span className="title-informations">Genres : </span>
+              {movieId.genres}
+            </p>
+
+            <div className="informations">
+              <p>
+                <span className="title-informations"> Année : </span>
+                {movieId.release_year}
+              </p>
+              <p>
+                <span className="title-informations"> Durée : </span>
+                {movieId.duration}
+              </p>
+            </div>
+            <div>
+              <p>
+                <span className="title-informations"> Synopsis : </span>
+                {movieId.synopsis}
+              </p>
+              <p>
+                <span className="title-informations">
+                  Maison de production :{" "}
+                </span>
+                {movieId.production}
+              </p>
+              <p>
+                <span className="title-informations"> Casting : </span>
+                {movieId.casting}
+              </p>
+            </div>
+            <FavoriteButton movie={movieId} id={movieId.id} />
+          </div>
+        </div>
+        <div className="same-categorie">
+          <h2>Dans la même catégorie</h2>
+          <section className="same-genre">
+            {sameGenre.map((movie) => (
+              <MovieCardDetail key={movie.id} movie={movie} />
+            ))}
+          </section>
+        </div>
       </div>
     </>
   );

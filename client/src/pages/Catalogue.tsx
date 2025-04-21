@@ -19,7 +19,7 @@ export default function Catalogue() {
   const freeMovies = movies.filter((movie) => !movie.premium);
   const premiumMovies = movies.filter((movie) => movie.premium);
   const sfMovies = movies.filter((movie) =>
-    movie.genres.includes("Science-fiction"),
+    movie.genres?.includes("Science-fiction"),
   );
 
   // Logge la watchlist pour vérification
@@ -50,8 +50,8 @@ export default function Catalogue() {
   return (
     <>
       <div className="first-container">
-        <div className="oDigital">ORIGINAL DIGITAL</div>
-        {subscription && (
+        <div className="oDigital">Original Digital</div>
+        {!subscription && (
           <button type="button" className="decouvrir-nos-offres">
             <a href="#acces">Découvrir nos offres</a>
           </button>
@@ -86,7 +86,6 @@ export default function Catalogue() {
               {moviesWatchlist.map((movie) => (
                 <div className="watchlist-movie" key={movie.id}>
                   <MovieCards key={movie.id} movie={movie} />
-                  {/* Bouton pour supprimer un film de la watchlist */}
                   <button
                     type="button"
                     className="delete-favorite-button"
@@ -103,7 +102,7 @@ export default function Catalogue() {
           )}
         </div>
       </div>
-      {subscription && (
+      {!subscription && (
         <section id="acces" className="connection-bottom">
           <h2>Nos différentes souscriptions</h2>
           <div className="bottom-container">

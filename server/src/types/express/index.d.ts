@@ -15,6 +15,7 @@ declare global {
         role: string;
         id: number;
         email: string;
+        subscription: boolean;
       };
       /* ************************************************************************* */
     }
