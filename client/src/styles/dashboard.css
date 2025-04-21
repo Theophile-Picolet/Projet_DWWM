@@ -18,13 +18,14 @@
   margin-right: 1rem;
   margin-top: 4rem;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  transition: 0.2s ease-out;
 }
 
 .dashboard-left button:hover {
   background-color: var(--bg-color);
   color: var(--bg-button);
   font-weight: 600;
-  transition: 0.2s ease-in-out;
+  transition: 0.2s ease-out;
 }
 
 .dashboard-right {

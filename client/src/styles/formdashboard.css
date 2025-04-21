@@ -25,11 +25,12 @@ input.submit-form {
   font-weight: 600;
   font-size: 1rem;
   cursor: pointer;
+  transition: 0.3s ease-out;
 }
 
 input.submit-form:hover {
   background-color: var(--bg-button);
   color: var(--bg-button);
-  transition: 0.2s ease-in-out;
+  transition: 0.15s ease-out;
   background-color: rgba(0, 0, 0, 0.047);
 }
