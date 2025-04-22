@@ -15,7 +15,7 @@ interface AuthProps {
 const authContext = createContext<AuthProps>({
   role: "anonymous",
   setRole: () => {},
-  subscription: false,
+  subscription: true,
   setSubscription: () => {},
 });
 

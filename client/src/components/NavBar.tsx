@@ -21,9 +21,9 @@ export default function NavBar() {
 
   const links = [
     {
-      name: "Accueil",
+      name: "Original Digital",
       path: "/",
-      role: ["anonymous", "administrateur"],
+      role: ["anonymous", "utilisateur", "administrateur"],
     },
     {
       name: "Dashboard",
@@ -31,12 +31,7 @@ export default function NavBar() {
       role: ["administrateur"],
     },
     {
-      name: "Se connecter",
-      path: "/login",
-      role: ["anonymous"],
-    },
-    {
-      name: "catalogue",
+      name: "Catalogue",
       path: "/catalogue",
       role: ["utilisateur", "administrateur"],
     },
@@ -45,19 +40,27 @@ export default function NavBar() {
   return (
     <nav>
       <img src="/Logo_OriginalDigital.webp" alt="logo" />
-      <ul>
-        {links
-          .filter((link) => link.role.includes(role))
-          .map((link) => (
-            <li key={link.name}>
-              <Link to={link.path}>{link.name}</Link>
-            </li>
-          ))}
-      </ul>
+      <div>
+        <ul className="navbar-links">
+          {links
+            .filter((link) => link.role.includes(role))
+            .map((link) => (
+              <li key={link.name}>
+                <Link to={link.path}>{link.name}</Link>
+              </li>
+            ))}
+        </ul>
+
+        <button type="button">
+          <span className="burger-bar" />
+        </button>
+      </div>{" "}
       {role === "anonymous" ? (
-        <Link to="/signup">Nous rejoindre</Link>
+        <Link className="seConnecter" to="/login">
+          Se connecter
+        </Link>
       ) : (
-        <button type="button" onClick={disconnect}>
+        <button className="connexion" type="button" onClick={disconnect}>
           Se déconnecter
         </button>
       )}

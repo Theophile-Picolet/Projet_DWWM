@@ -1,21 +1,113 @@
 .list-movie {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
 }
 .movie-edit {
-  border: solid 1px #7e7e7e;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
-  align-items: center;
-  margin: 1rem;
+  width: 20rem;
+  height: 8rem;
   padding: 1rem;
-  border-radius: 5px;
+  margin-bottom: 1rem;
+  border-radius: var(--button-radius);
+  font-size: 1.2rem;
+  color: var(--bg-color);
+  -webkit-text-stroke: 1px rgba(96, 96, 96, 0);
+  text-shadow: 0px 0px 4px rgb(29, 29, 29);
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
-.movie-edit > button {
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
+.dashboard-edit {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  button {
+    width: 3rem;
+    height: 3rem;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    img {
+      width: 1.3rem;
+      height: auto;
+    }
+  }
+}
+
+.movie-edit button:hover {
+  cursor: pointer;
+  border: 3px solid var(--bg-button);
+  transform: scale(1.1);
+}
+
+.confirmation-content {
+  padding: 1rem;
+}
+
+.confirmation-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-evenly;
+  margin-top: 1rem;
+  padding-bottom: 1rem;
+  .confirm-button,
+  .cancel-button {
+    padding: 0.5rem 1rem;
+    border-radius: var(--button-radius);
+    border: 2px solid var(--bg-button);
+    font-size: 1rem;
+    color: var(--bg-color);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background-color: var(--bg-button);
+    font-weight: 600;
+    transition: background-color 0.3s ease-out, color 0.3s ease-out;
+  }
+
+  .confirm-button:hover,
+  .cancel-button:hover {
+    background-color: var(--bg-button);
+    color: var(--bg-button);
+    transition: background-color 0.3s ease-out, color 0.3s ease-out;
+    background-color: rgba(0, 0, 0, 0.047);
+    cursor: pointer;
+  }
+}
+
+.modal-content {
+  position: fixed;
+  top: 10%;
+  left: 25%;
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+  background-color: var(--bg-color);
+  color: var(--bg-button);
+  font-size: 1.15rem;
+  font-weight: 700;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   border-radius: var(--button-radius);
-  border: none;
-  padding: 0.5rem 0.5rem;
+  box-shadow: 0px 0px 10px rgba(0.5, 0.5, 0.5, 0.5);
+
+  z-index: 1000;
+  button {
+    padding: 1rem;
+    border-radius: var(--button-radius);
+    border: 2px solid var(--bg-button);
+    background-color: var(--bg-button);
+    color: var(--bg-color);
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease-out, color 0.3s ease-out;
+  }
+  button:hover {
+    background-color: var(--bg-color);
+    color: var(--bg-button);
+    transition: background-color 0.15s ease-out, color 0.15s ease-out;
+    cursor: pointer;
+  }
 }

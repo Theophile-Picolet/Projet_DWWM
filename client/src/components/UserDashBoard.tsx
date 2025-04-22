@@ -6,15 +6,31 @@ export default function UserDashBoard() {
 
   return (
     <>
-      {users.map((user) => (
-        <div key={user.id} className="user-dashboard">
-          <p>
-            {user.last_name} {user.first_name}
-          </p>
-          <p>{user.email}</p>
-          <p>{user.role}</p>
-        </div>
-      ))}
+      <section className="dashboard-container">
+        {users.map((user) => (
+          <div key={user.id} className="user-dashboard">
+            <p>
+              id : <b>{user.id}</b>
+            </p>
+            <p>
+              nom : <b>{user.last_name}</b>
+            </p>
+            <p>
+              prenom : <b>{user.first_name}</b>
+            </p>
+            <p>
+              mail : <b>{user.email}</b>
+            </p>
+            <p>
+              rôle : <b>{user.role}</b>
+            </p>
+            <p>
+              {" "}
+              abonnement : <b>{user.subscription}</b>
+            </p>
+          </div>
+        ))}
+      </section>
     </>
   );
 }

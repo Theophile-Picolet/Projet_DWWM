@@ -59,6 +59,7 @@ const login: RequestHandler = async (req, res, next) => {
         message: "Connexion réussie",
         role: payload.role,
         email: payload.email,
+        subscription: user.subscription,
       });
     }
   } catch (error) {
@@ -85,6 +86,7 @@ const verify: RequestHandler = async (req, res, next) => {
       id: resultPayLoad.id,
       email: resultPayLoad.email,
       role: resultPayLoad.role,
+      subscription: resultPayLoad.subscription,
     };
 
     next();
