@@ -101,8 +101,8 @@
     img {
       width: 12.5rem;
       height: 17rem;
-      border-radius: 12px;
-      margin-bottom: 1rem;
+      border-radius: 16px;
+      margin-bottom: 2rem;
       box-shadow: 3px 6px 8px 0px rgb(114, 114, 114);
     }
     img:hover {
