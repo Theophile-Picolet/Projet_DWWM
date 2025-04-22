@@ -26,6 +26,7 @@ import {
 // Try creating these components in the "pages" folder
 import { AuthProvider } from "./services/AuthContext";
 import { WatchlistProvider } from "./services/WatchlistContext";
+import Payment from "./pages/Payment";
 
 /* ************************************************************************* */
 
@@ -77,6 +78,10 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login />,
+      },
+      {
+        path: "/payment",
+        element: <Payment />,
       },
     ],
     // Try adding a new route! For example, "/about" with an About component

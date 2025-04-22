@@ -1,70 +1,143 @@
-@media only screen and (min-width: 768px) {
-  nav {
-    position: fixed;
-    top: 0;
-    z-index: 1000;
-    background-color: var(--bg-color);
-    width: 100%;
-    padding: 1rem 1rem 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    img {
-      width: 50px;
-    }
-    a {
-      color: var(--secondary);
-      font-size: 18px;
-    }
-    .seConnecter,
-    .connexion {
-      border: 1px solid var(--bg-button);
-      padding: 0;
-      cursor: pointer;
-      font-size: 18px;
-      transform: translateY(-10px);
-      padding: 1rem;
-      background: var(--bg-button);
-      color: var(--secondary-color);
-      border-radius: var(--button-radius);
-      border: 2px solid var(--bg-button);
-      transition: 0.2s ease-out;
-    }
-    .seConnecter:hover,
-    .connexion:hover {
-      background: var(--bg-color);
-      color: var(--bg-button);
-      transition: 0.2s ease-out;
-    }
+.navbar {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--bg-color);
+  width: 100%;
+  margin: 0 auto;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  a {
+    color: var(--secondary);
+    font-size: 18px;
+  }
+  .seConnecter,
+  .connexion {
+    padding: 0;
+    cursor: pointer;
+    font-size: 18px;
+    height: 3rem;
+    padding: 0.5rem 1rem;
+    background: var(--bg-button);
+    color: var(--secondary-color);
+    border-radius: var(--nav-radius);
+    border: 2px solid var(--bg-button);
+    transition: 0.2s ease-out;
+  }
+  .seConnecter:hover,
+  .connexion:hover {
+    background: var(--bg-color);
+    color: var(--bg-button);
+    transition: 0.2s ease-out;
+  }
+  img {
+    width: 50px;
+    height: 50px;
+  }
+}
+.navbar-links {
+  display: flex;
+  flex-direction: row;
+}
+
+.navbar-links li {
+  padding: 0.5rem 1rem;
+  border-radius: var(--nav-radius);
+  color: var(--bg-button);
+  transition: background-color 0.4s ease-out;
+}
+.navbar-links li:hover {
+  background-color: var(--bg-button);
+  transition: background-color 0.2s ease-out;
+  background-color: rgba(0, 0, 0, 0.047);
+  font-weight: 600;
+}
+.navbar-burger,
+.role-burger {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .navbar {
+    min-height: 100px;
   }
   .navbar-links {
-    display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 91vh;
+    background-color: var(--bg-color);
+    visibility: hidden;
+    transition: none;
   }
-
+  .show-nav .navbar-links {
+    right: 0;
+    visibility: visible;
+  }
   .navbar-links li {
-    padding: 1rem 1.5rem;
-    border-radius: var(--button-radius);
-    color: var(--bg-button);
-    transition: background-color 0.4s ease-out;
+    display: block;
+    margin-bottom: 1rem;
   }
-  .navbar-links li:hover {
-    background-color: var(--bg-button);
-    transition: background-color 0.2s ease-out;
-    background-color: rgba(0, 0, 0, 0.047);
-    font-weight: 600;
+  .navbar-burger {
+    display: block;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    width: 40px;
+    height: 40px;
+    background: var(--bg-color);
+    border: none;
+    color: inherit;
+  }
+  .role-nav {
+    display: none;
+  }
+  .role-burger {
+    display: block;
+    .seConnecter,
+    .connexion {
+      transition: none;
+    }
   }
 
-  .seConnecter {
-    padding: 1rem 1.5rem;
-    border-radius: var(--button-radius);
-    transition: background-color 0.2s ease-out;
+  .burger-bar,
+  .burger-bar::before,
+  .burger-bar::after {
+    display: block;
+    width: 40px;
+    height: 3px;
+    position: relative;
+    border-radius: 3px;
+    background-color: var(--primary-color);
+    transition: all 0.5s ease-in-out;
+  }
+  .burger-bar::before,
+  .burger-bar::after {
+    content: "";
+    position: absolute;
+  }
+  .burger-bar::before {
+    transform: translateY(-12px);
   }
 
-  .seConnecter:hover {
-    background-color: var(--bg-button);
-    transition: background-color 0.2s ease-in-out;
-    background-color: rgba(0, 0, 0, 0.047);
+  .burger-bar::after {
+    transform: translateY(12px);
+  }
+  .show-nav .burger-bar {
+    background: transparent;
+    width: 0;
+  }
+  .show-nav .burger-bar::before {
+    transform: rotate(45deg);
+  }
+  .show-nav .burger-bar::after {
+    transform: rotate(-45deg);
   }
 }
