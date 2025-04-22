@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import MovieCards from "../components/MovieCards";
 import { useAuth } from "../services/AuthContext";
@@ -46,6 +46,7 @@ export default function Catalogue() {
       console.error("Erreur lors de la suppression des favoris :", error);
     }
   };
+  const [selectedOffer, setSelectedOffer] = useState("free");
 
   return (
     <>
@@ -103,31 +104,49 @@ export default function Catalogue() {
         </div>
       </div>
       {!subscription && (
-        <section id="acces" className="connection-bottom">
-          <h2>Nos différentes souscriptions</h2>
-          <div className="bottom-container">
-            <div className="bottom-left">
-              <h3>Offre Gratuite</h3>
-              <p>Visionnez 4 films par mois</p>
-              <p className="bottom-free">Accédez à notre catalogue complet</p>
-              <p className="bottom-free">Regardez en haute qualité</p>
-              <p className="bottom-free">Gérez vos listes de films à voir</p>
+        <div className="catalogue-bottom">
+          <section id="acces" className="middle-element">
+            <h2>Nos différentes souscriptions</h2>
+            <div className="offer">
+              <button
+                type="button"
+                className={`button ${selectedOffer === "free" ? "active" : "inactive"}`}
+                onClick={() => setSelectedOffer("free")}
+              >
+                Gratuit
+              </button>
+              <button
+                type="button"
+                className={`button ${selectedOffer === "premium" ? "active" : "inactive"}`}
+                onClick={() => setSelectedOffer("premium")}
+              >
+                Premium
+              </button>
             </div>
-
-            <div className="bottom-right">
-              <h3>Offre Premium</h3>
-              <p>Films illimités en haute qualité</p>
-              <p>Accédez à notre catalogue complet</p>
-              <p>Regardez en haute qualité</p>
-              <p>Gérez vos listes de films à voir</p>
+            <div className="content">
+              {selectedOffer === "free" ? (
+                <div className="free">
+                  <p>Visionnez 4 films par mois</p>
+                  <p className="disabled">Accédez à notre catalogue complet</p>
+                  <p className="disabled">Regardez en haute qualité</p>
+                  <p className="disabled">Gérez vos listes de films à voir</p>
+                </div>
+              ) : (
+                <div className="premium">
+                  <p>Films illimités en haute qualité</p>
+                  <p>Accédez à notre catalogue complet</p>
+                  <p>Regardez en haute qualité</p>
+                  <p>Gérez vos listes de films à voir</p>
+                </div>
+              )}
             </div>
-          </div>
-          <Link to="/payment">
-            <button type="button" className="button-premium">
-              Devenir Premium
-            </button>
-          </Link>
-        </section>
+            <div className="bottom-element">
+              <Link to="/payment" className="inscription">
+                DEVENIR PREMIUM
+              </Link>
+            </div>
+          </section>
+        </div>
       )}
     </>
   );

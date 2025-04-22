@@ -13,6 +13,7 @@
   --bg-color: #fbfeff;
   --title-color: rgba(0, 0, 0, 0.7);
   --secondary-color: white;
+  --hover-color: rgba(0, 0, 0, 0.047);
   --button-radius: 12px;
   --nav-radius: 8px;
 }

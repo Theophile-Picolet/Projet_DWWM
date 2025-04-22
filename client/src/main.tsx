@@ -22,11 +22,11 @@ import {
   getUsers,
 } from "./services/request";
 
+import Payment from "./pages/Payment";
 // Import additional components for new routes
 // Try creating these components in the "pages" folder
 import { AuthProvider } from "./services/AuthContext";
 import { WatchlistProvider } from "./services/WatchlistContext";
-import Payment from "./pages/Payment";
 
 /* ************************************************************************* */
 

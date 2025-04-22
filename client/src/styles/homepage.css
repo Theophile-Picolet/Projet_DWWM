@@ -97,7 +97,7 @@ section > h2 {
   font-size: 2rem;
   line-height: 2.5rem;
   font-weight: 600;
-  margin-bottom: 2rem;
+  margin: 3rem 0 1.5rem;
 }
 .button.active {
   border-bottom: 2px solid black;
@@ -107,10 +107,11 @@ section > h2 {
   text-align: center;
   display: flex;
   flex-direction: column;
+  margin-top: 1.5rem;
   .inscription {
     color: var(--title-color);
     font-size: 1.1rem;
-    margin: 0 auto;
+    margin: 3rem auto;
     width: 22rem;
     text-align: center;
     font-weight: 600;
