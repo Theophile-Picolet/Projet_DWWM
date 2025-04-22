@@ -1,7 +1,6 @@
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import "../styles/NavBar.css";
-import { useState } from "react";
 import { useAuth } from "../services/AuthContext";
 
 export default function NavBar() {
