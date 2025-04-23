@@ -22,6 +22,7 @@ import {
   getUsers,
 } from "./services/request";
 
+import Payment from "./pages/Payment";
 // Import additional components for new routes
 // Try creating these components in the "pages" folder
 import { AuthProvider } from "./services/AuthContext";
@@ -77,6 +78,10 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login />,
+      },
+      {
+        path: "/payment",
+        element: <Payment />,
       },
     ],
     // Try adding a new route! For example, "/about" with an About component

@@ -1,5 +1,5 @@
-import "../styles/payment.css";
 import PaymentForm from "../components/PaymentForm";
+import "../styles/payment.css";
 
 export default function Payment() {
   return (

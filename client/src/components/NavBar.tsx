@@ -1,6 +1,7 @@
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import "../styles/NavBar.css";
+import { useState } from "react";
 import { useAuth } from "../services/AuthContext";
 
 export default function NavBar() {
@@ -36,9 +37,13 @@ export default function NavBar() {
       role: ["utilisateur", "administrateur"],
     },
   ];
+  const [open, setOpen] = useState(false);
+  const handleBurger = () => {
+    setOpen(!open);
+  };
 
   return (
-    <nav>
+    <nav className={`navbar ${open ? "show-nav" : "hide-nav"}`}>
       <img src="/Logo_OriginalDigital.webp" alt="logo" />
       <div>
         <ul className="navbar-links">
@@ -46,24 +51,39 @@ export default function NavBar() {
             .filter((link) => link.role.includes(role))
             .map((link) => (
               <li key={link.name}>
-                <Link to={link.path}>{link.name}</Link>
+                <Link to={link.path} onClick={handleBurger}>
+                  {link.name}
+                </Link>
               </li>
             ))}
+          <div className="role-burger">
+            {" "}
+            {role === "anonymous" ? (
+              <Link className="seConnecter" to="/login">
+                Se connecter
+              </Link>
+            ) : (
+              <button className="connexion" type="button" onClick={disconnect}>
+                Se déconnecter
+              </button>
+            )}
+          </div>
         </ul>
-
-        <button type="button">
-          <span className="burger-bar" />
-        </button>
-      </div>{" "}
-      {role === "anonymous" ? (
-        <Link className="seConnecter" to="/login">
-          Se connecter
-        </Link>
-      ) : (
-        <button className="connexion" type="button" onClick={disconnect}>
-          Se déconnecter
-        </button>
-      )}
+      </div>
+      <div className="role-nav">
+        {role === "anonymous" ? (
+          <Link className="seConnecter" to="/login">
+            Se connecter
+          </Link>
+        ) : (
+          <button className="connexion" type="button" onClick={disconnect}>
+            Se déconnecter
+          </button>
+        )}
+      </div>
+      <button className="navbar-burger" type="button" onClick={handleBurger}>
+        <span className="burger-bar" />
+      </button>
     </nav>
   );
 }

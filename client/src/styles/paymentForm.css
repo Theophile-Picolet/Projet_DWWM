@@ -7,18 +7,23 @@
     justify-content: space-between;
   }
   .button-cancel-submit > button {
-    margin-top: 0.5rem;
+    border: 1px solid var(--bg-button);
+    margin-top: 1rem;
+    width: 8.5rem;
+    padding: 0;
     cursor: pointer;
-    border: none;
-    border-radius: 5px;
-    color: white;
+    font-size: 18px;
+    transform: translateY(-10px);
+    padding: 1rem;
+    background: var(--bg-button);
+    color: var(--secondary-color);
+    border-radius: var(--button-radius);
+    border: 2px solid var(--bg-button);
+    transition: 0.2s ease-out;
   }
-  .button-cancel-submit > button:first-child {
-    padding: 1rem 2rem;
-    background-color: grey;
-  }
-  .button-cancel-submit > button:last-child {
-    padding: 1rem 4rem;
-    background-color: black;
+  .button-cancel-submit > button:hover {
+    background: var(--bg-color);
+    color: var(--bg-button);
+    transition: 0.2s ease-out;
   }
 }

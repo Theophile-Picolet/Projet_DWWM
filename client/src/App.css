@@ -11,9 +11,11 @@
   --primary-color: rgb(107, 107, 107);
   --bg-button: #6c6c6c;
   --bg-color: #fbfeff;
-  --title-color: rgba(0, 0, 0, 0.7);
+  --title-color: rgb(55, 55, 55);
   --secondary-color: white;
+  --hover-color: #ebeeee;
   --button-radius: 12px;
+  --nav-radius: 8px;
 }
 
 body {
@@ -43,6 +45,10 @@ body {
   ul,
   ol {
     list-style: none;
+  }
+  .footer {
+    text-align: center;
+    font-size: 1rem;
   }
 }
 

@@ -29,7 +29,7 @@ export default function MovieCards({ movie }: MoviesProps) {
             </div>
           </Link>
         ) : movie.premium && !subscription ? (
-          <Link to="payment" onClick={scrollToTop}>
+          <Link to="/payment" onClick={scrollToTop}>
             <div
               className="background-card"
               style={{ backgroundImage: `url(${movie.landscape_image})` }}
