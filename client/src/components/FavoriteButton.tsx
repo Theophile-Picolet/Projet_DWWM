@@ -44,13 +44,13 @@ export default function FavoriteButton({ id, movie }: FavoriteButtonProps) {
         disabled={isFavorite} // Désactive le bouton si le film est déjà un favori
         aria-label={
           isFavorite
-            ? "Film déjà dans les favoris"
-            : "Ajouter à la liste des films Favoris"
+            ? " Le film déjà dans les favoris"
+            : "Ajouter  le film à la liste des films Favoris"
         }
       >
         <span className="favorite-icon">{isFavorite ? "★" : "☆"}</span>{" "}
         {/* Change l'icône en fonction de l'état */}
-        <span className="button-text">
+        <span className={`button-text ${isFavorite ? "active" : ""}`}>
           {isFavorite
             ? `${movie.title.toUpperCase()} est dans la liste des Favoris`
             : ` Ajouter ${movie.title.toUpperCase()} à ma liste des Favoris`}
