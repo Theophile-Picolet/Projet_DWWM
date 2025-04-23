@@ -113,7 +113,7 @@ export default function EditDashBoard() {
           <div className="modal-content confirmation-content">
             <p>
               Êtes-vous sûr de vouloir supprimer{" "}
-              {movies.find((m) => m.id === movieToDelete)?.title}
+              {movies.find((m) => m.id === movieToDelete)?.title} ?
             </p>
             <div className="confirmation-buttons">
               <button

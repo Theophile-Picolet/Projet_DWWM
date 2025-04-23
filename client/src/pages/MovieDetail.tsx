@@ -2,7 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import "../styles/movieCardDetail.css";
 import "../styles/moviesDetail.css";
 import FavoriteButton from "../components/FavoriteButton";
-import MovieCardDetail from "../components/MovieCardDetail";
+import MovieCards from "../components/MovieCards";
 export default function MovieDetail() {
   const { movieId } = useLoaderData() as { movieId: MovieType };
   const { movies } = useLoaderData() as { movies: MovieType[] };
@@ -17,8 +17,8 @@ export default function MovieDetail() {
         <div className="trailer">
           <iframe
             className="short-movie"
-            width="1400px%"
-            height="600px"
+            width="100%"
+            height="100%"
             src={movieId.trailer}
             title="YouTube video player"
             frameBorder="0"
@@ -70,7 +70,7 @@ export default function MovieDetail() {
           <h2>Dans la même catégorie</h2>
           <section className="same-genre">
             {sameGenre.map((movie) => (
-              <MovieCardDetail key={movie.id} movie={movie} />
+              <MovieCards key={movie.id} movie={movie} />
             ))}
           </section>
         </div>

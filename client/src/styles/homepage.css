@@ -7,6 +7,15 @@
   background-size: cover;
   display: flex;
   flex-direction: column;
+  h1 {
+    font-size: 2rem;
+    margin: 2rem;
+    color: var(--bg-button);
+  }
+  p {
+    color: var(--title-color);
+    margin: 2rem 1rem;
+  }
   .inscription {
     color: var(--title-color);
     font-size: 1.1rem;
@@ -43,15 +52,6 @@
   }
 }
 
-.top-element > h1 {
-  font-size: 2rem;
-  margin: 2rem;
-}
-
-.top-element > p {
-  margin: 2rem 1rem;
-}
-
 .movie-container {
   display: flex;
   overflow-y: hidden;
@@ -59,11 +59,19 @@
   scrollbar-color: #76767639 transparent;
   scrollbar-width: thin;
   gap: 1rem;
-  margin: 1rem 0 1rem 1rem;
+  margin: 0rem 0 1rem 1rem;
   min-height: auto;
+
   .card-movie {
-    /* transform: scale(0.9); */
-    /* margin: 0; */
+    width: 17.5rem;
+    margin: 0;
+  }
+  .card-movie a {
+    transform: scale(0.9);
+  }
+  .card-movie .movie-p {
+    text-align: left;
+    margin: 0 1.5rem 1rem;
   }
 }
 
@@ -87,10 +95,12 @@ section > h2 {
   margin-top: 1rem;
 }
 
-.offer > button {
-  border: none;
-  font-size: large;
-  background: none;
+.offer {
+  button {
+    border: none;
+    font-size: large;
+    background: none;
+  }
 }
 
 .middle-element > h2 {
@@ -98,6 +108,7 @@ section > h2 {
   line-height: 2.5rem;
   font-weight: 600;
   margin: 3rem 0 1.5rem;
+  color: var(--bg-button);
 }
 .button.active {
   border-bottom: 2px solid black;
@@ -142,73 +153,91 @@ section > h2 {
 @media only screen and (min-width: 1440px) {
   .all-element {
     display: flex;
+    flex-direction: row;
     margin: 5rem;
     height: 100%;
-    justify-content: space-between;
-    gap: 4rem;
+    justify-content: space-evenly;
+    gap: 0rem;
     background-image: none;
+    .top-element {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: left;
+      width: 50vw;
+      height: auto;
+      .movie-container {
+        max-width: 31vw;
+      }
+      .img-homepage {
+        display: block;
+        padding: 3rem;
+        width: 30rem;
+        height: auto;
+      }
+      .inscription {
+        display: none;
+      }
+      h2 {
+        display: flex;
+        text-align: left;
+        margin: 0;
+        margin-top: 1rem;
+      }
+      p {
+        text-align: center;
+      }
+    }
+    .middle-element::before {
+      background-image: url("/bg-header.png");
+      background-repeat: repeat;
+      background-position: center;
+      content: "";
+      display: block;
+      width: 50vw;
+      height: 80vh;
+      z-index: -1;
+      position: absolute;
+      filter: brightness(0.7) contrast(0.6) blur(4px);
+      border: 1px solid transparent;
+      border-radius: var(--button-radius);
+    }
+    .middle-element {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-radius: var(--button-radius);
+      width: 50vw;
+      height: 88vh;
+      color: var(--secondary-color);
+      padding: 3rem;
+      align-items: center;
+      h2 {
+        margin-bottom: 5rem;
+      }
+      p {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+      }
+      .active,
+      .inactive {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+      .inscription {
+        margin-top: 3rem;
+      }
+    }
   }
 
-  .bottom-element {
-    display: none;
-  }
-
-  .middle-element {
-    background-image: url("/bg-desktop.svg");
-    display: flex;
-    flex-direction: column;
-    background-size: cover;
-    border-radius: var(--button-radius);
-    width: 900px;
-    height: auto;
-    color: var(--secondary-color);
-    padding: 3rem;
-    align-items: center;
-  }
-
-  .top-element {
-    display: flex;
-    flex-direction: column;
-    width: calc(100% / 3);
-    text-align: left;
-  }
-  .top-element > h2 {
-    text-align: left;
-    margin: 0;
-    margin-top: 1rem;
-  }
   .arrow {
     display: none;
   }
 
-  .button-middle {
-    border: none;
-    background-color: black;
-    color: var(--secondary-color);
-    padding: 0.5rem;
-    width: 15rem;
-    border-radius: var(--button-radius);
-    margin-top: 4rem;
-  }
-
-  .middle-element > h2 {
-    margin-top: 4rem;
-  }
-
-  .top-element > h1 {
-    font-size: 2rem;
-  }
-
   .offer > button {
-    color: var(--secondary-color);
-  }
-
-  .input-mail > a {
-    padding: 1rem;
-    text-align: center;
-  }
-
-  .input-mail > input {
-    padding: 1rem;
+    color: var(--bg-color);
   }
 }

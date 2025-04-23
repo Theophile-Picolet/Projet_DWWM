@@ -25,13 +25,14 @@
     background: var(--bg-button);
     color: var(--secondary-color);
     border-radius: var(--nav-radius);
-    border: 2px solid var(--bg-button);
+    border: 2px solid transparent;
     transition: 0.2s ease-out;
   }
   .seConnecter:hover,
   .connexion:hover {
     background: var(--bg-color);
     color: var(--bg-button);
+    border: 2px solid var(--bg-button);
     transition: 0.2s ease-out;
   }
   img {

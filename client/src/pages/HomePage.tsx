@@ -59,13 +59,13 @@ export default function HomePage() {
               <p>Gérez vos listes de films à voir</p>
             </div>
           )}
+          <div className="bottom-element">
+            <Link to="/signup" className="inscription">
+              NOUS REJOINDRE
+            </Link>
+          </div>
         </div>
       </section>
-      <div className="bottom-element">
-        <Link to="/signup" className="inscription">
-          NOUS REJOINDRE
-        </Link>
-      </div>
     </section>
   );
 }
