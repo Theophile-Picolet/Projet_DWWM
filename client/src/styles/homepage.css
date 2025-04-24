@@ -199,7 +199,7 @@ section > h2 {
       height: 80vh;
       z-index: -1;
       position: absolute;
-      filter: brightness(0.7) contrast(0.6) blur(4px);
+      filter: brightness(0.9) contrast(0.7) blur(4px);
       border: 1px solid transparent;
       border-radius: var(--button-radius);
     }

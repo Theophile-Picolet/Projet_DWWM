@@ -43,7 +43,15 @@
     margin: 0 1rem;
   }
 }
-
+.catalogue {
+  margin: 0 auto;
+  .show-movies {
+    margin-left: 0;
+    .movie-container {
+      margin-left: 0;
+    }
+  }
+}
 .catalogue h2 {
   margin-left: 1rem;
 }
@@ -127,9 +135,7 @@
   }
 
   .catalogue {
-    background: url();
-    max-width: 68.5vw;
-    margin: 0 auto;
+    max-width: 77vw;
   }
 
   .show-movies h2 {
@@ -137,26 +143,29 @@
     margin-top: 3rem;
   }
 
-  .middle-element .premium {
-    color: var(--bg-color);
-    font-size: 1.2rem;
-  }
   .catalogue-bottom {
     margin-top: 6rem;
     .middle-element h2 {
       color: var(--title-color);
-      margin: 0 0 1rem;
+      margin-top: 1rem;
     }
     .middle-element {
       margin: 0 auto;
-      width: 68.5vw;
+      padding-top: 1rem;
+      width: 100%;
       border-radius: none;
       line-height: 2rem;
+      background-color: var(--hover-color);
+      .button {
+        color: var(--bg-button);
+        font-size: 1.2rem;
+      }
     }
 
     .bottom-element {
       display: block;
-      margin-top: 3rem;
+      margin: 3rem;
+      height: 5rem;
       border-radius: var(--nav-radius);
       .inscription {
         padding: 1rem 10rem;
