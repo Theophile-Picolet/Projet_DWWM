@@ -59,7 +59,7 @@ export default function NavBar() {
           <div className="role-burger">
             {" "}
             {role === "anonymous" ? (
-              <Link className="seConnecter" to="/login">
+              <Link className="seConnecter" to="/login" onClick={handleBurger}>
                 Se connecter
               </Link>
             ) : (
