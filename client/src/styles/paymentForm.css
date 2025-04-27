@@ -1,0 +1,30 @@
+.payment-form {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  .button-cancel-submit {
+    display: flex;
+    justify-content: space-between;
+  }
+  .button-cancel-submit > button {
+    border: 1px solid var(--bg-button);
+    margin-top: 1rem;
+    width: 8.5rem;
+    padding: 0;
+    cursor: pointer;
+    font-size: 18px;
+    transform: translateY(-10px);
+    padding: 1rem;
+    background: var(--bg-button);
+    color: var(--secondary-color);
+    border-radius: var(--button-radius);
+    border: 2px solid transparent;
+    transition: 0.2s ease-out;
+  }
+  .button-cancel-submit > button:hover {
+    background: var(--bg-color);
+    border: 2px solid var(--bg-button);
+    color: var(--bg-button);
+    transition: 0.2s ease-out;
+  }
+}

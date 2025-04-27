@@ -82,11 +82,19 @@ export default function EditDashBoard() {
   return (
     <section className="list-movie">
       {movies.map((movie) => (
-        <section className="movie-edit" key={movie.id}>
+        <section
+          className="movie-edit"
+          key={movie.id}
+          style={{
+            backgroundImage: `url(${movie.landscape_image})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
           <div className="dashboard-movielist">
             <p>{movie.title}</p>
           </div>
-          <div>
+          <div className="dashboard-edit">
             <button type="button" onClick={() => handleDeleteClick(movie.id)}>
               <img src="/GarbageIcone.png" alt="Delete" />
             </button>
@@ -103,7 +111,10 @@ export default function EditDashBoard() {
           open
         >
           <div className="modal-content confirmation-content">
-            <p>Êtes-vous sûr de vouloir supprimer ce film ?</p>
+            <p>
+              Êtes-vous sûr de vouloir supprimer{" "}
+              {movies.find((m) => m.id === movieToDelete)?.title} ?
+            </p>
             <div className="confirmation-buttons">
               <button
                 type="button"

@@ -6,21 +6,39 @@
 
 :root {
   --body-font: Poppins, sans-serif;
-  --font-size: 14px;
-  --primary-color: black;
-  --bg-button: #7e7e7e;
+  --title-font: Segoe UI, sans-serif;
+  --font-size: 16px;
+  --primary-color: rgba(64, 77, 79, 0.644);
+  --bg-button: rgba(64, 77, 79, 0.855);
+  --bg-color: rgb(251, 254, 255);
+  --title-color: rgb(64, 77, 79);
   --secondary-color: white;
-  --button-radius: 8px;
+  --hover-color: rgb(235, 238, 238);
+  --button-radius: 12px;
+  --nav-radius: 8px;
 }
 
 body {
+  background-color: var(--bg-color);
   font-size: var(--font-size);
   line-height: 1.7;
   font-family: var(--body-font);
-  padding: 1rem;
-  margin: 0 auto;
+  margin: 6.4rem auto;
+  h2 {
+    font-size: 18px;
+  }
+  h1,
+  h2,
+  h3 {
+    color: var(--primary-color);
+  }
 
   a {
+    text-decoration: none;
+    color: var(--secondary-color);
+  }
+
+  Selection colors Hex a {
     text-decoration: none;
     color: var(--secondary-color);
   }
@@ -28,10 +46,11 @@ body {
   ol {
     list-style: none;
   }
-}
-@media only screen and (min-width: 400px) {
-  body {
-    padding: 1rem 0;
-    max-width: 75vw;
+  .footer {
+    text-align: center;
+    font-size: 1rem;
   }
 }
+
+/* @media only screen and (min-width: 768px) {
+} */

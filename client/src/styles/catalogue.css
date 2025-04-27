@@ -1,167 +1,185 @@
-.movie-container::after {
-  background-color: rgb(161, 161, 161);
-  position: absolute;
-  display: block;
-  height: 1px;
-  width: 90%;
-  content: "";
-  transform: translateY(15rem);
-}
-
-.movie-container:last-of-type::after {
-  display: none;
-}
-
-.decouvrir-nos-offres {
-  border: none;
-  background-color: black;
-  color: var(--secondary-color);
-  padding: 0.5rem;
-  width: 10rem;
-  border-radius: var(--button-radius);
-  text-align: center;
+.oDigital {
+  position: relative;
+  z-index: 1;
+  font-size: 3.5rem;
+  font-family: Poppins, sans-serif;
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: var(--title-color);
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  transform: translateY(-7rem);
+  text-align: center;
+  height: 50vh;
+  width: 100%;
+}
+
+.oDigital::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("bg-header.png");
+  background-position: top center;
+  background-repeat: repeat;
+  filter: blur(3px);
+  z-index: -1;
 }
 
 .first-container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  margin-top: 2rem;
-  button {
-    margin-top: 2rem;
+  text-align: center;
+  margin: 6.4rem 0 3rem;
+  h1 {
+    font-size: 32px;
+    font-weight: 600;
   }
-  a {
-    color: var(--secondary-color);
-  }
-}
-
-.first-container svg {
-  position: absolute;
-  transform: translateY(-4.1rem) translateX(1.5rem);
-}
-
-.first-container .img-container {
-  max-height: 42rem;
-  max-width: 100%;
-}
-
-.show-movies h2 {
-  margin-top: 1rem;
-  font-size: 18px;
-}
-
-.show-movies h2:first-of-type {
-  margin-top: 0;
-}
-
-.show-movies .movie-container {
-  margin-bottom: 2rem;
-}
-
-.connection-bottom {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-image: url("/bg-desktop.svg");
-  padding: 1rem;
-  padding-bottom: 2rem;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-radius: var(--button-radius);
-  margin: 5rem 0;
-  h2 {
-    color: var(--secondary-color);
-    font-weight: 500;
-    font-size: 1.8rem;
-  }
-}
-
-.bottom-container {
-  display: flex;
-  flex-direction: row;
-  align-content: center;
   p {
-    color: var(--secondary-color);
-  }
-
-  .bottom-left,
-  .bottom-right {
-    text-align: center;
-  }
-
-  h3 {
-    color: var(--secondary-color);
-    font-weight: 400;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-  }
-  .bottom-free {
-    color: rgb(108, 108, 108);
+    margin: 0 1rem;
   }
 }
-.separation {
-  background-color: black;
-  position: relative;
-  display: block;
-  height: 1px;
-  width: 150px;
-  content: "";
-  transform: rotate(90deg) translateX(5rem);
+.catalogue {
+  margin: 0 auto;
+  .show-movies {
+    margin-left: 0;
+    .movie-container {
+      margin-left: 0;
+    }
+  }
+}
+.catalogue h2 {
+  margin-left: 1rem;
 }
 
-.button-bottom {
-  background-color: black;
-  width: auto;
-  color: var(--secondary-color);
-  border: none;
-  padding: 1rem 2rem;
-  margin-top: 2rem;
-  border-radius: var(--button-radius);
+.card-movie {
+  height: auto;
+  width: 13.5rem;
+  margin: 0;
 }
-
-.movie-card {
-  flex: 1 1 200px;
-}
-
-.movie-container {
-  background-color: bisque;
-}
-
-.card-movie-img {
-  background-color: aqua;
-}
-.card-movie-img .movie-title {
+.card-movie .movie-title {
   font-size: 14px;
+  color: black;
 }
 
-.card-movie-img img {
+.card-movie img {
   height: 11rem;
   width: 8.5rem;
   border-radius: var(--button-radius);
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px
-    8px 16px -8px;
 }
 
-@media only screen and (min-width: 400px) {
-  .card-movie-img img {
-    height: 18rem;
-    width: 13.5rem;
-    margin: 2rem 2rem 2rem 0;
+.decouvrir-nos-offres {
+  font-size: 1.1rem;
+  margin: 3rem auto 0;
+  width: 22rem;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 1rem 0.5rem;
+  background: var(--bg-button);
+  transition: all 0.2s ease-out;
+  border-radius: var(--button-radius);
+  border: 2px solid transparent;
+  cursor: pointer;
+  a {
+    color: var(--bg-color);
   }
 }
+.decouvrir-nos-offres:hover {
+  background: var(--bg-color);
+  border: 2px solid var(--bg-button);
+  transition: all 0.2s ease-out;
+  a {
+    color: var(--bg-button);
+  }
+}
+.middle-element .disabled {
+  color: black;
+  font-size: 1.1rem;
+  font-family: var(--title-font);
+  font-weight: 400;
+}
+.middle-element .premium {
+  color: var(--title-color);
+  font-size: 1.1rem;
+  font-family: var(--title-font);
+  font-weight: 500;
+}
 
-/* @media only screen and (min-width: 1440px) {
-  .movie-container::after {
-    width: 91.5%;
-    content: "";
-    transform: translateY(30rem);
-    display: block;
+.middle-element .active:hover,
+.middle-element .inactive:hover {
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 768px) {
+  .first-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+  }
+  .oDigital {
+    font-size: 6rem;
+    font-weight: 700;
+    height: 60vh;
+  }
+  .decouvrir-nos-offres {
+    font-size: 1.1rem;
+    margin: 0 auto 0;
+    width: 488.8px;
+  }
+
+  .catalogue {
+    max-width: 77vw;
   }
 
   .show-movies h2 {
-    margin-top: 5rem;
+    font-size: 21px;
+    margin-top: 3rem;
   }
-}  */
+
+  .catalogue-bottom {
+    margin-top: 6rem;
+    .middle-element h2 {
+      color: var(--title-color);
+      margin-top: 1rem;
+    }
+    .middle-element {
+      margin: 0 auto;
+      padding-top: 1rem;
+      width: 100%;
+      border-radius: none;
+      line-height: 2rem;
+      background-color: var(--hover-color);
+      .button {
+        color: var(--bg-button);
+        font-size: 1.2rem;
+      }
+    }
+
+    .bottom-element {
+      display: block;
+      margin: 3rem;
+      height: 5rem;
+      border-radius: var(--nav-radius);
+      .inscription {
+        padding: 1rem 10rem;
+        border: 2px transparent;
+        background-color: var(--bg-button);
+        color: var(--bg-color);
+        transition: 0.2s ease-out;
+      }
+      .inscription:hover {
+        background: var(--bg-color);
+        border: 2px solid var(--bg-button);
+        color: var(--title-color);
+        transition: 0.2s ease-out;
+      }
+    }
+  }
+}

@@ -11,14 +11,13 @@ export default function HomePage() {
     <section className="all-element">
       <section className="top-element">
         <h1>L’original au service du digital</h1>
-        <p>
-          Profitez d' un catalogue qui contient le meilleur du cinéma. Saisissez
-          votre adresse e-mail pour nous rejoindre.
-        </p>
-        <div className="input-mail">
-          <img src="/image-homepage.png" alt="" />
-        </div>
-        <img src="/arrow-down.png" alt="" className="arrow" />
+        <p>Profitez d' un catalogue qui contient le meilleur du cinéma.</p>
+        <Link to="/signup" className="inscription">
+          S'INSCRIRE
+        </Link>
+        <img className="img-homepage" src="/image-homepage.png" alt="" />
+
+        <img src="/Arrow-2.png" alt="" className="arrow" />
         <h2>Tendances Actuelles</h2>
         <section className="movie-container">
           {freeMovies.map((movie) => (
@@ -60,15 +59,13 @@ export default function HomePage() {
               <p>Gérez vos listes de films à voir</p>
             </div>
           )}
-          <button type="button" className="button-middle">
-            <Link to="/signup">Nous rejoindre</Link>
-          </button>
+          <div className="bottom-element">
+            <Link to="/signup" className="inscription">
+              NOUS REJOINDRE
+            </Link>
+          </div>
         </div>
       </section>
-      <div className="bottom-element">
-        <h2>N' attendez plus!</h2>
-        <Link to="/">Se connecter</Link>
-      </div>
     </section>
   );
 }

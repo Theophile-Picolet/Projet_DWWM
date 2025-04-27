@@ -1,19 +1,19 @@
-create table user (
-  id int unsigned primary key auto_increment not null,
+CREATE TABLE user (
+  id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
   first_name VARCHAR(50) NOT NULL,
   last_name VARCHAR(50) NOT NULL,
-  email varchar(255) not null unique,
-  hashed_password varchar(255) not null,
+  email VARCHAR(255) NOT NULL UNIQUE,
+  hashed_password VARCHAR(255) NOT NULL,
   subscription BOOLEAN DEFAULT 0,
   role VARCHAR(50) NOT NULL DEFAULT 'utilisateur'
 );
 
-create table movie (
-  id int unsigned primary key auto_increment not null,
-  title VARCHAR(255) not null,
-  synopsis TEXT not null,
-  release_year YEAR  not null,
-  duration TIME not null,
+CREATE TABLE movie (
+  id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  title VARCHAR(255) NOT NULL,
+  synopsis TEXT NOT NULL,
+  release_year YEAR NOT NULL,
+  duration TIME NOT NULL,
   poster VARCHAR(255) NOT NULL,
   trailer VARCHAR(255) NOT NULL,
   casting TEXT NOT NULL,
@@ -22,19 +22,25 @@ create table movie (
   premium BOOLEAN DEFAULT 1
 );
 
-create table genre (
-id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-name VARCHAR(255) NOT NULL
+CREATE TABLE genre (
+  id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  name VARCHAR(255) NOT NULL
 );
 
-create table movie_genre (
-movie_id INT NOT NULL,
-genre_id INT NOT NULL
+CREATE TABLE movie_genre (
+  movie_id INT UNSIGNED NOT NULL,
+  genre_id INT UNSIGNED NOT NULL,
+  PRIMARY KEY (movie_id, genre_id),
+  FOREIGN KEY (movie_id) REFERENCES movie(id) ON DELETE CASCADE,
+  FOREIGN KEY (genre_id) REFERENCES genre(id) ON DELETE CASCADE
 );
 
-create table watchlist (
-movie_id int not null,
-user_id int not null
+CREATE TABLE watchlist (
+  movie_id INT UNSIGNED NOT NULL,
+  user_id INT UNSIGNED NOT NULL,
+  PRIMARY KEY (movie_id, user_id),
+  FOREIGN KEY (movie_id) REFERENCES movie(id) ON DELETE CASCADE,
+  FOREIGN KEY (user_id) REFERENCES user(id) ON DELETE CASCADE
 );
 
 INSERT INTO movie (title, synopsis, release_year, duration, poster, trailer, casting, production, landscape_image, premium)
@@ -143,8 +149,8 @@ VALUES
 
 insert into user ( first_name, last_name, email, hashed_password, subscription, role)
 VALUES
-("Brayan", "Fagete", "adminod@gmail.com","$argon2id$v=19$m=19456,t=2,p=1$bu7ilozTjfTl0BIpGcpf+w$9EfzE01omfSwpvC7PGLuH/3mtmjQF1V7n5b8Yc4QoI0", "0", "administrateur"),
-("Alex", "Taranne", "wild@gmail.com", "$argon2id$v=19$m=19456,t=2,p=1$bu7ilozTjfTl0BIpGcpf+w$9EfzE01omfSwpvC7PGLuH/3mtmjQF1V7n5b8Yc4QoI0", "0", "utilisateur" );
+("Theo", "Pico", "adminod@gmail.com","$argon2id$v=19$m=19456,t=2,p=1$bu7ilozTjfTl0BIpGcpf+w$9EfzE01omfSwpvC7PGLuH/3mtmjQF1V7n5b8Yc4QoI0", "1", "administrateur"),
+("Chris", "Barth", "wild@gmail.com", "$argon2id$v=19$m=19456,t=2,p=1$bu7ilozTjfTl0BIpGcpf+w$9EfzE01omfSwpvC7PGLuH/3mtmjQF1V7n5b8Yc4QoI0", "0", "utilisateur" );
 insert into genre (name)
 VALUES
 ("Action"), ("Horreur"), ("Science-fiction"), ("Drame"), ("Romance"), ("Comédie"), ("Aventure"), ("Jeunesse"), ("Thriller"), ("Policier"), ("Criminel"), ("Fantastique"), ("Comédie musical"), ("Film d'animation"), ("Guerre"), ("Thriller érotique"), ("Prison"), ("Western");
@@ -273,7 +279,6 @@ VALUES
 (61, 1),
 (61, 3),
 (61, 12),
-(62, 7),
 (62, 1),
 (62, 7),
 (63, 7),

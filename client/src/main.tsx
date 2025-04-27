@@ -22,9 +22,11 @@ import {
   getUsers,
 } from "./services/request";
 
+import Payment from "./pages/Payment";
 // Import additional components for new routes
 // Try creating these components in the "pages" folder
 import { AuthProvider } from "./services/AuthContext";
+import { WatchlistProvider } from "./services/WatchlistContext";
 
 /* ************************************************************************* */
 
@@ -43,7 +45,12 @@ const router = createBrowserRouter([
       {
         path: "/movies/:id",
         element: <MovieDetail />,
-        loader: async ({ params }) => getMovieById(Number(params.id)),
+        loader: async ({ params }) => ({
+          authorization: await getAuthorizationForUsersOrAdmin(),
+          movieId: await getMovieById(Number(params.id)),
+          movies: await getMovies(),
+        }),
+        errorElement: <Signup />,
       },
       {
         path: "/catalogue",
@@ -52,7 +59,7 @@ const router = createBrowserRouter([
           authorization: await getAuthorizationForUsersOrAdmin(),
           movies: await getMovies(),
         }),
-        errorElement: <Forbidden />,
+        errorElement: <Signup />,
       },
       {
         path: "/signup",
@@ -72,6 +79,10 @@ const router = createBrowserRouter([
         path: "/login",
         element: <Login />,
       },
+      {
+        path: "/payment",
+        element: <Payment />,
+      },
     ],
     // Try adding a new route! For example, "/about" with an About component
   },
@@ -89,7 +100,9 @@ if (rootElement == null) {
 createRoot(rootElement).render(
   <StrictMode>
     <AuthProvider>
-      <RouterProvider router={router} />
+      <WatchlistProvider>
+        <RouterProvider router={router} />
+      </WatchlistProvider>
     </AuthProvider>
   </StrictMode>,
 );

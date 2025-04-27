@@ -1,57 +1,80 @@
 import { useLoaderData } from "react-router-dom";
-import "../styles/MoviesDetail.css";
+import "../styles/movieCardDetail.css";
+import "../styles/moviesDetail.css";
 import FavoriteButton from "../components/FavoriteButton";
+import MovieCards from "../components/MovieCards";
 export default function MovieDetail() {
-  const movie = useLoaderData() as MovieType;
+  const { movieId } = useLoaderData() as { movieId: MovieType };
+  const { movies } = useLoaderData() as { movies: MovieType[] };
+  const movieGenreId = movieId.genres.split(",")[0];
+  const sameGenre = movies.filter((movie) =>
+    movie.genres?.includes(movieGenreId),
+  );
   return (
     <>
-      <h1>Original digitals</h1>
-      <div className="container-movies">
-        <iframe
-          className="complete-movie"
-          width="100%"
-          height="315"
-          src={movie.trailer}
-          title="YouTube video player"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerPolicy="strict-origin-when-cross-origin"
-          allowFullScreen
-        />
-        <h2>{movie.title}</h2>
-        <div className="informations">
-          <p>{movie.release_year}</p>
-          <p>{movie.duration}</p>
+      <div className="detail-container">
+        <h1>Original digitals</h1>
+        <div className="trailer">
+          <iframe
+            className="short-movie"
+            width="100%"
+            height="100%"
+            src={movieId.trailer}
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          />
         </div>
-        <div className="bio">
-          <p>{movie.synopsis.slice(0, 50)}...</p>
-          <details>
-            <summary>
-              <p>En savoir plus</p>
-            </summary>
-            <p>{movie.synopsis.substring(50)}</p>
-          </details>
-          <FavoriteButton id={movie.id} />
+
+        <div className="detail-container-movies">
+          <img src={movieId.poster} alt={movieId.title} />
+          <div className="container-middle">
+            <h2>{movieId.title.toUpperCase()}</h2>
+            <p>
+              <span className="title-informations">Genres : </span>
+              {movieId.genres}
+            </p>
+
+            <div className="informations">
+              <p>
+                <span className="title-informations"> Année : </span>
+                {movieId.release_year}
+              </p>
+              <p>
+                <span className="title-informations"> Durée : </span>
+                {movieId.duration}
+              </p>
+            </div>
+            <div>
+              <p>
+                <span className="title-informations"> Synopsis : </span>
+                {movieId.synopsis}
+              </p>
+              <p>
+                <span className="title-informations">
+                  Maison de production :{" "}
+                </span>
+                {movieId.production}
+              </p>
+              <p>
+                <span className="title-informations"> Casting : </span>
+                {movieId.casting}
+              </p>
+            </div>
+            <FavoriteButton movie={movieId} id={movieId.id} />
+          </div>
+        </div>
+        <div className="same-categorie">
+          <h2>Dans la même catégorie</h2>
+          <section className="same-genre">
+            {sameGenre.map((movie) => (
+              <MovieCards key={movie.id} movie={movie} />
+            ))}
+          </section>
         </div>
       </div>
-      <div className="trailer">
-        <h2>Bande annonce</h2>
-        <iframe
-          className="short-movie"
-          width="100%"
-          height="315"
-          src={movie.trailer}
-          title="YouTube video player"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerPolicy="strict-origin-when-cross-origin"
-          allowFullScreen
-        />
-      </div>
-      <section>
-        <h2 className="same-genre">Films du même genre</h2>
-        <p>{movie.genres}</p>
-      </section>
     </>
   );
 }

@@ -1,6 +1,7 @@
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import "../styles/NavBar.css";
+import { useState } from "react";
 import { useAuth } from "../services/AuthContext";
 
 export default function NavBar() {
@@ -21,9 +22,9 @@ export default function NavBar() {
 
   const links = [
     {
-      name: "Accueil",
+      name: "Original Digital",
       path: "/",
-      role: ["anonymous", "administrateur"],
+      role: ["anonymous", "utilisateur", "administrateur"],
     },
     {
       name: "Dashboard",
@@ -31,36 +32,58 @@ export default function NavBar() {
       role: ["administrateur"],
     },
     {
-      name: "Se connecter",
-      path: "/login",
-      role: ["anonymous"],
-    },
-    {
-      name: "catalogue",
+      name: "Catalogue",
       path: "/catalogue",
       role: ["utilisateur", "administrateur"],
     },
   ];
+  const [open, setOpen] = useState(false);
+  const handleBurger = () => {
+    setOpen(!open);
+  };
 
   return (
-    <nav>
+    <nav className={`navbar ${open ? "show-nav" : "hide-nav"}`}>
       <img src="/Logo_OriginalDigital.webp" alt="logo" />
-      <ul>
-        {links
-          .filter((link) => link.role.includes(role))
-          .map((link) => (
-            <li key={link.name}>
-              <Link to={link.path}>{link.name}</Link>
-            </li>
-          ))}
-      </ul>
-      {role === "anonymous" ? (
-        <Link to="/signup">Nous rejoindre</Link>
-      ) : (
-        <button type="button" onClick={disconnect}>
-          Se déconnecter
-        </button>
-      )}
+      <div>
+        <ul className="navbar-links">
+          {links
+            .filter((link) => link.role.includes(role))
+            .map((link) => (
+              <li key={link.name}>
+                <Link to={link.path} onClick={handleBurger}>
+                  {link.name}
+                </Link>
+              </li>
+            ))}
+          <div className="role-burger">
+            {" "}
+            {role === "anonymous" ? (
+              <Link className="seConnecter" to="/login" onClick={handleBurger}>
+                Se connecter
+              </Link>
+            ) : (
+              <button className="connexion" type="button" onClick={disconnect}>
+                Se déconnecter
+              </button>
+            )}
+          </div>
+        </ul>
+      </div>
+      <div className="role-nav">
+        {role === "anonymous" ? (
+          <Link className="seConnecter" to="/login">
+            Se connecter
+          </Link>
+        ) : (
+          <button className="connexion" type="button" onClick={disconnect}>
+            Se déconnecter
+          </button>
+        )}
+      </div>
+      <button className="navbar-burger" type="button" onClick={handleBurger}>
+        <span className="burger-bar" />
+      </button>
     </nav>
   );
 }
