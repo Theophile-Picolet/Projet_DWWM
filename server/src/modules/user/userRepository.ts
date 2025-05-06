@@ -102,6 +102,13 @@ class UserRepository {
     );
     return result.affectedRows;
   }
+  async updatePremium(user: User) {
+    const [result] = await databaseClient.query<Result>(
+      "UPDATE user SET subscription = TRUE WHERE id = ?",
+      [user.id],
+    );
+    return result.affectedRows;
+  }
 }
 
 export default new UserRepository();

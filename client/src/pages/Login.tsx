@@ -57,10 +57,14 @@ export default function Login() {
                 value={credentials.password}
               />
             </div>
-            <input type="submit" value="Continuer" />
+            <input
+              className="login-continuer"
+              type="submit"
+              value="Continuer"
+            />
             <ToastContainer
-              position="top-right"
-              autoClose={3000}
+              position="top-center"
+              autoClose={2000}
               hideProgressBar={false}
               newestOnTop={false}
               closeOnClick
