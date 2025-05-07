@@ -1,7 +1,10 @@
+import "../styles/erreur404.css";
 export default function ErrorPage() {
   return (
     <>
-      <h1>Page 404</h1>
+      <section className="erreur404">
+        <p>On a perdu la bobine ?</p>
+      </section>
     </>
   );
 }

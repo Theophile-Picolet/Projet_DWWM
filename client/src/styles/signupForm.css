@@ -29,12 +29,7 @@ form {
     border-radius: 5px;
     margin-bottom: 0.5rem;
   }
-  input[type="email"]:invalid {
-    outline-color: red;
-  }
-  input[type="email"]:valid {
-    outline-color: green;
-  }
+
   .password-input {
     position: relative;
   }
@@ -93,6 +88,9 @@ form {
     outline-color: red;
   }
   input[type="email"]:valid {
-    outline-color: green;
+    outline-color: var(--primary-color);
+  }
+  input[type="password"]:valid {
+    outline-color: var(--primary-color);
   }
 }

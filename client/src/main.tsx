@@ -22,6 +22,7 @@ import {
   getUsers,
 } from "./services/request";
 
+import ErrorPage from "./pages/ErrorPage";
 import Payment from "./pages/Payment";
 // Import additional components for new routes
 // Try creating these components in the "pages" folder
@@ -36,6 +37,7 @@ const router = createBrowserRouter([
   {
     // The root path
     element: <App />, // Renders the App component for the home page
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",

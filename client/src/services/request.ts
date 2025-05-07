@@ -1,6 +1,6 @@
 import axios from "axios";
 import type { useNavigate } from "react-router-dom";
-import { Bounce, toast } from "react-toastify";
+import { Flip, toast } from "react-toastify";
 
 const API = import.meta.env.VITE_API_URL;
 
@@ -45,31 +45,31 @@ const editMovie = async (id: number, updatedMovie: MovieType) => {
 
 const createUser = (userData: UserData): Promise<boolean> => {
   const notifySucces = () =>
-    toast.success("Votre profil a bien été créé 🚀", {
-      position: "top-right",
-      autoClose: 3000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
+    toast.success("Votre profil a bien été créé 🎬", {
+      position: "top-center",
+      autoClose: 2000,
+      hideProgressBar: true,
+      closeOnClick: false,
+      pauseOnHover: false,
       draggable: true,
       progress: undefined,
       theme: "light",
-      transition: Bounce,
+      transition: Flip,
     });
 
   const notifyError = (
     errorMessage = "Une erreur est survenue lors de l'inscription",
   ) =>
     toast.error(errorMessage, {
-      position: "top-right",
-      autoClose: 3000,
+      position: "top-center",
+      autoClose: 2000,
       hideProgressBar: false,
-      closeOnClick: true,
+      closeOnClick: false,
       pauseOnHover: true,
       draggable: true,
       progress: undefined,
       theme: "light",
-      transition: Bounce,
+      transition: Flip,
     });
 
   return axios.post(`${API}/api/users`, userData).then((response) => {
@@ -113,31 +113,31 @@ const loginUser = (
   setSubscription: (subscription: boolean) => void,
 ) => {
   const notifySuccess = () =>
-    toast.success("Bienvenue sur Original Digital 🚀", {
-      position: "top-right",
-      autoClose: 3000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
+    toast.success("Bienvenue sur Original Digital 🎬", {
+      position: "top-center",
+      autoClose: 2000,
+      hideProgressBar: true,
+      closeOnClick: false,
+      pauseOnHover: false,
       draggable: true,
       progress: undefined,
       theme: "light",
-      transition: Bounce,
+      transition: Flip,
     });
 
   const notifyError = (
     errorMessage = "Erreur lors de la connexion, mot de passe ou email incorrect",
   ) =>
     toast.error(errorMessage, {
-      position: "top-right",
-      autoClose: 3000,
+      position: "top-center",
+      autoClose: 2000,
       hideProgressBar: false,
-      closeOnClick: true,
+      closeOnClick: false,
       pauseOnHover: true,
       draggable: true,
       progress: undefined,
       theme: "light",
-      transition: Bounce,
+      transition: Flip,
     });
 
   return axios
@@ -148,7 +148,7 @@ const loginUser = (
       notifySuccess();
       setTimeout(() => {
         navigate(data.role === "administrateur" ? "/dashboard" : "/catalogue");
-      }, 3000);
+      }, 2000);
     })
     .catch((error) => {
       notifyError();
@@ -162,15 +162,15 @@ const editPremium = (
 ) => {
   const notifySuccess = () =>
     toast.success("Votre abonnement Premium a bien été activé 🚀", {
-      position: "top-right",
-      autoClose: 3000,
-      hideProgressBar: false,
+      position: "top-center",
+      autoClose: 2000,
+      hideProgressBar: true,
       closeOnClick: true,
-      pauseOnHover: true,
+      pauseOnHover: false,
       draggable: true,
       progress: undefined,
       theme: "light",
-      transition: Bounce,
+      transition: Flip,
     });
 
   return axios
@@ -187,7 +187,7 @@ const editPremium = (
         notifySuccess();
         setTimeout(() => {
           navigate("/catalogue");
-        }, 3000);
+        }, 2000);
       }
     })
     .catch((error) => console.error(error));
