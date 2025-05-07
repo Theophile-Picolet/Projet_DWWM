@@ -1,14 +1,15 @@
-form {
+.section-signup form {
   display: flex;
   flex-direction: column;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  background-color: var(--secondary-color);
-  border-radius: 5px;
-  padding: 1rem;
-  width: 326px;
-  h1 {
-    text-align: left;
+  box-shadow: 2px 8px 10px rgba(0, 0, 0, 0.387);
+  background-color: var(--bg-color);
+  border-radius: var(--button-radius);
+  padding: 2rem;
+  h2 {
+    font-size: 2rem;
+    color: var(--title-color);
   }
+
   h3 {
     font-size: 0.9rem;
     font-style: oblique;
@@ -18,6 +19,7 @@ form {
   label {
     display: flex;
     align-items: flex-start;
+    margin-top: 0.5rem;
   }
   label > p {
     color: red;
@@ -27,7 +29,8 @@ form {
     width: 100%;
     border: 1px solid var(--primary-color);
     border-radius: 5px;
-    margin-bottom: 0.5rem;
+    margin-bottom: 01rem;
+    background-color: var(--bg-color);
   }
 
   .password-input {
@@ -58,39 +61,54 @@ form {
     font-size: 0.5rem;
   }
   .submit {
-    padding: 0.5rem;
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
-    border: none;
-    border-radius: 5px;
+    padding: 1rem;
+    background-color: var(--title-color);
+    color: var(--bg-color);
+    border: 1px solid transparent;
+    border-radius: var(--button-radius);
     cursor: pointer;
+    transform: scaleY(1.1);
+    margin-bottom: 1rem;
+    font-family: var(--body-font);
+    font-size: 1rem;
+    transition: all 0.33s ease-out;
   }
   .submit:disabled {
-    background-color: var(--primary-color);
-    opacity: 0.5;
+    background-color: var(--hover-color);
+    color: var(--title-color);
     cursor: not-allowed;
+    transform: none;
+    transition: all 0.2s ease-out;
   }
   .submit:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    transition: 0.2s ease;
+    color: var(--title-color);
+    background-color: var(--bg-color);
+    box-shadow: 0px 6px 12px rgb(129, 129, 129);
+    transition: all 0.2s ease-out;
   }
   a {
-    color: var(--primary-color);
-    opacity: 0.6;
-    margin-top: 0.5rem;
+    color: var(--bg-color);
+    background-color: var(--title-color);
+    border-radius: var(--button-radius);
+    border: 1px solid transparent;
+    padding: 1rem 0;
+    margin: 1rem 0;
     text-align: center;
+    transition: all 0.33s ease-out;
   }
   a:hover {
-    color: var(--primary-color);
-    opacity: 1;
+    color: var(--title-color);
+    background-color: var(--bg-color);
+    box-shadow: 0px 6px 12px rgb(129, 129, 129);
+    transition: all 0.2s ease-out;
   }
   input[type="email"]:invalid {
-    outline-color: red;
+    outline-color: rgb(150, 37, 37);
   }
   input[type="email"]:valid {
-    outline-color: var(--primary-color);
+    outline-color: var(--bg-color);
   }
   input[type="password"]:valid {
-    outline-color: var(--primary-color);
+    outline-color: var(--bg-color);
   }
 }

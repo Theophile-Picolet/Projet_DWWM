@@ -82,8 +82,8 @@ export default function SignupForm() {
     <>
       {!showFullForm ? (
         <form onSubmit={handleEmailSubmit}>
-          <h1>S'inscrire</h1>
-          <label htmlFor="email">Email</label>
+          <h2>S'inscrire</h2>
+          <label htmlFor="email">E-mail</label>
           <input
             type="email"
             id="email"
@@ -92,7 +92,7 @@ export default function SignupForm() {
             onChange={(e) => {
               setUser((prev) => ({ ...prev, email: e.target.value }));
             }}
-            placeholder="Votre email"
+            placeholder="Votre adresse e-mail"
             required
           />
           <button

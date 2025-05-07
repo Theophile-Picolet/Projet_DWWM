@@ -1,5 +1,12 @@
 .section-signup {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  margin-top: 2rem;
+  text-align: center;
+  align-items: center;
+  height: 80vh;
+  background-image: url("/background.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }

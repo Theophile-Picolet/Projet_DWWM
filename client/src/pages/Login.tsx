@@ -41,7 +41,7 @@ export default function Login() {
                 type="email"
                 name="email"
                 id="email"
-                placeholder="Votre E-mail"
+                placeholder="Votre adresse e-mail"
                 onChange={handleChangeCredentials}
                 value={credentials.email}
               />
@@ -52,7 +52,7 @@ export default function Login() {
                 type="password"
                 name="password"
                 id="password"
-                placeholder="Votre Password"
+                placeholder="Votre mot de passe"
                 onChange={handleChangeCredentials}
                 value={credentials.password}
               />

@@ -1,14 +1,14 @@
 .login {
-  height: 70vh;
+  height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
   margin: 1rem 0;
-  background-image: url("/bg-header.png");
-  background-repeat: repeat;
+  background-image: url("/background.png");
+  background-repeat: no-repeat;
   background-position: center;
-  background-size: 15%;
+  background-size: cover;
 }
 .login .login-page {
   font-family: var(--body-font);
@@ -35,53 +35,35 @@
     color: var(--primary-color);
   }
   .login-continuer {
+    padding: 1rem;
     background-color: var(--title-color);
     border: 1px solid transparent;
     color: var(--bg-color);
+    font-family: var(--body-font);
+    font-size: 1rem;
+    border-radius: var(--button-radius);
+    transition: all 0.33s ease-out;
   }
   .login-continuer:hover {
     background-color: var(--bg-color);
-    border: 1px solid var(--title-color);
+    /* border: 1px solid var(--title-color); */
     color: var(--title-color);
-  }
-  /* button {
-    margin-top: 1rem;
-    font-size: 1rem;
-    background: black;
-    border: none;
-    letter-spacing: 0.6px;
-    color: var(--secondary-color);
-    width: 10rem;
-  } */
-  input {
-    margin-top: 1rem;
-    border: none;
+    font-weight: 500;
+    box-shadow: 0px 6px 12px rgb(129, 129, 129);
+    cursor: pointer;
+    transition: all 0.2s ease-out;
   }
 
-  input:hover {
-    border: none;
-    background-color: white;
-  }
-
-  button,
   input {
-    border-radius: var(--button-radius);
-    width: 13.75rem;
     margin-bottom: 1rem;
+    border: 1px solid var(--primary-color);
+    background-color: var(--bg-color);
+    border-radius: 5px;
+    width: 13.75rem;
   }
 
   input {
     padding: 0.7rem;
-  }
-
-  button {
-    padding: 1rem;
-  }
-
-  button:hover {
-    background-color: rgb(161, 161, 161);
-    color: black;
-    font-weight: 600;
   }
 }
 
@@ -97,9 +79,7 @@
 
 .container-form {
   border-radius: var(--button-radius);
-  border: 1px solid rgba(0, 0, 0, 0.382);
-  padding: 1rem 2rem;
-  margin-top: 2rem;
+  padding-top: 1rem;
 }
 
 @media only screen and (max-width: 650px) {
@@ -112,9 +92,6 @@
   .login .login-page {
     max-width: 336px;
     padding: 0.5rem;
-    h2 {
-      font-size: 1.5rem;
-    }
     p {
       font-size: 1rem;
       margin-top: 1rem;
