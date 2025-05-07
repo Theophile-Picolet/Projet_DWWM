@@ -120,24 +120,15 @@ const checkIfAdminOrUser: RequestHandler = async (req, res, next) => {
 };
 const upgradeToPremium: RequestHandler = async (req, res, next) => {
   try {
-    const user_id = req.user.id;
+    const userId = Number(req.user.id);
 
-    const user = await userRepository.read(user_id);
-
-    if (!user) {
-      res.sendStatus(404);
-      return;
-    }
-
-    // user.subscription = true;
-
-    const affectedRows = await userRepository.updatePremium(user);
+    const affectedRows = await userRepository.updatePremium(userId);
 
     if (!affectedRows) {
       res.status(400).json({ message: "Mise à jour échouée" });
     }
 
-    const updatedUser = await userRepository.read(user_id);
+    const updatedUser = await userRepository.read(userId);
 
     if (!updatedUser) {
       res.sendStatus(404);

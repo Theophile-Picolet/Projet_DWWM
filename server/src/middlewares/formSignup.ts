@@ -1,6 +1,5 @@
 import type { RequestHandler } from "express";
 import Joi from "joi";
-import hashPassword from "./hashPassword";
 
 const signupSchema = Joi.object({
   first_name: Joi.string().min(3).max(50).required().messages({

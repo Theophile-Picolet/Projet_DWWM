@@ -23,7 +23,7 @@ class UserRepository {
 
   async read(id: number) {
     const [rows] = await databaseClient.query<Rows>(
-      "SELECT first_name, last_name, email, role FROM user WHERE id = ?",
+      "SELECT * FROM user WHERE id = ?",
       [id],
     );
 
@@ -31,9 +31,7 @@ class UserRepository {
   }
 
   async readAll() {
-    const [rows] = await databaseClient.query<Rows>(
-      "select *, first_name, last_name from user",
-    );
+    const [rows] = await databaseClient.query<Rows>("select * from user");
     return rows as User[];
   }
 
@@ -102,10 +100,10 @@ class UserRepository {
     );
     return result.affectedRows;
   }
-  async updatePremium(user: User) {
+  async updatePremium(userId: number) {
     const [result] = await databaseClient.query<Result>(
-      "UPDATE user SET subscription = TRUE WHERE id = ?",
-      [user.id],
+      "UPDATE user SET subscription = 1 WHERE id = ?",
+      [userId],
     );
     return result.affectedRows;
   }
