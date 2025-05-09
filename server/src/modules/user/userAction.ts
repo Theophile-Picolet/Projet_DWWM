@@ -119,22 +119,6 @@ const sendSuccessStatus: RequestHandler = async (req, res, next) => {
     next(error);
   }
 };
-// const editPremium: RequestHandler = async (req, res, next) => {
-//   try {
-//     const subscription = {
-//       id: req.user.id,
-//       subscription: req.body.subscription,
-//     };
-//     const affectedRows = await userRepository.updatePremium(subscription);
-//     if (affectedRows === 0) {
-//       res.sendStatus(404);
-//     } else {
-//       res.sendStatus(204);
-//     }
-//   } catch (error) {
-//     next(error);
-//   }
-// };
 
 export default {
   browse,

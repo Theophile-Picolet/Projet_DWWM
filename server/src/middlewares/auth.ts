@@ -55,7 +55,7 @@ const login: RequestHandler = async (req, res, next) => {
         expiresIn: "1d",
       });
 
-      res.cookie("auth", token).json({
+      res.status(200).cookie("auth", token).json({
         message: "Connexion réussie",
         role: payload.role,
         email: payload.email,
@@ -118,7 +118,7 @@ const checkIfAdminOrUser: RequestHandler = async (req, res, next) => {
     next(error);
   }
 };
-const upgradeToPremium: RequestHandler = async (req, res, next) => {
+const editPremium: RequestHandler = async (req, res, next) => {
   try {
     const userId = Number(req.user.id);
 
@@ -178,5 +178,5 @@ export default {
   checkIfAdmin,
   checkIfAdminOrUser,
   logout,
-  upgradeToPremium,
+  editPremium,
 };

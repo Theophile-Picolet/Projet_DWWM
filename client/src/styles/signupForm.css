@@ -62,16 +62,18 @@
   }
   .submit {
     padding: 1rem;
-    background-color: var(--title-color);
+    background-color: var(--primary-color);
     color: var(--bg-color);
     border: 1px solid transparent;
     border-radius: var(--button-radius);
     cursor: pointer;
-    transform: scaleY(1.1);
+    /* transform: scaleY(1.1); */
     margin-bottom: 1rem;
     font-family: var(--body-font);
-    font-size: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
     transition: all 0.33s ease-out;
+    letter-spacing: 0.5px;
   }
   .submit:disabled {
     background-color: var(--hover-color);
@@ -82,23 +84,26 @@
   }
   .submit:hover {
     color: var(--title-color);
-    background-color: var(--bg-color);
+    background-color: var(--hover-color);
     box-shadow: 0px 6px 12px rgb(129, 129, 129);
     transition: all 0.2s ease-out;
   }
   a {
     color: var(--bg-color);
-    background-color: var(--title-color);
+    background-color: var(--primary-color);
     border-radius: var(--button-radius);
     border: 1px solid transparent;
     padding: 1rem 0;
     margin: 1rem 0;
     text-align: center;
     transition: all 0.33s ease-out;
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
   }
   a:hover {
-    color: var(--title-color);
-    background-color: var(--bg-color);
+    color: var(--bg-button);
+    background-color: var(--hover-color);
     box-shadow: 0px 6px 12px rgb(129, 129, 129);
     transition: all 0.2s ease-out;
   }

@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import "../styles/login.css";
 import { useState } from "react";
-import { Bounce, ToastContainer } from "react-toastify";
+import { Flip, ToastContainer } from "react-toastify";
 import { useAuth } from "../services/AuthContext";
 import { loginUser } from "../services/request";
 
@@ -73,7 +73,7 @@ export default function Login() {
               draggable
               pauseOnHover
               theme="light"
-              transition={Bounce}
+              transition={Flip}
             />
           </div>
         </form>

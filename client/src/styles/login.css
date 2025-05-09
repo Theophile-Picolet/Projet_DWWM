@@ -36,19 +36,19 @@
   }
   .login-continuer {
     padding: 1rem;
-    background-color: var(--title-color);
+    background-color: var(--hover-color);
     border: 1px solid transparent;
-    color: var(--bg-color);
+    color: var(--bg-button);
     font-family: var(--body-font);
-    font-size: 1rem;
+    font-size: 1.1rem;
     border-radius: var(--button-radius);
     transition: all 0.33s ease-out;
+    font-weight: 600;
   }
   .login-continuer:hover {
     background-color: var(--bg-color);
-    /* border: 1px solid var(--title-color); */
-    color: var(--title-color);
-    font-weight: 500;
+    /* color: var(--primary-color); */
+
     box-shadow: 0px 6px 12px rgb(129, 129, 129);
     cursor: pointer;
     transition: all 0.2s ease-out;
