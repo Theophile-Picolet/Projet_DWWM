@@ -66,8 +66,7 @@ router.put(
   "/api/users/premium",
   auth.verify,
   auth.checkIfAdminOrUser,
-  auth.upgradeToPremium,
-  // userAction.editPremium,
+  auth.editPremium,
 );
 
 router.put("/api/users/:id", auth.verify, auth.checkIfAdmin, userAction.edit);

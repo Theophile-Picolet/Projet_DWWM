@@ -8,25 +8,25 @@
 
 .dashboard-left > button {
   width: 8rem;
-  background-color: var(--bg-button);
-  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  border: none;
+  color: var(--bg-color);
   border-radius: 8px;
-  border: 2px solid transparent;
+  font-weight: 600;
   cursor: pointer;
   padding: 1rem 0.5rem;
   font-size: 1.1rem;
   margin-right: 1rem;
   margin-top: 4rem;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  transition: 0.2s ease-out;
+  font-family: var(--body-font);
+  transition: all 0.33s ease-out;
 }
 
 .dashboard-left button:hover {
-  background-color: var(--bg-color);
-  border: 2px solid var(--bg-button);
   color: var(--bg-button);
-  font-weight: 600;
-  transition: 0.2s ease-out;
+  box-shadow: 0px 6px 12px rgb(129, 129, 129);
+  background-color: var(--hover-color);
+  transition: all 0.15s ease-out;
 }
 
 .dashboard-right {

@@ -58,6 +58,7 @@ class UserRepository {
     );
     return result.affectedRows;
   }
+
   async delete(id: number) {
     const [result] = await databaseClient.query<Result>(
       "delete from user where id = ?",
@@ -79,6 +80,7 @@ class UserRepository {
     );
     return rows;
   }
+
   async addMovieToUserWatchlist(watchlist: {
     user_id: number;
     movie_id: number;
@@ -100,6 +102,7 @@ class UserRepository {
     );
     return result.affectedRows;
   }
+
   async updatePremium(userId: number) {
     const [result] = await databaseClient.query<Result>(
       "UPDATE user SET subscription = 1 WHERE id = ?",

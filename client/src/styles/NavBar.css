@@ -22,17 +22,19 @@
     font-size: 18px;
     height: 3rem;
     padding: 0.5rem 1rem;
-    background: var(--bg-button);
-    color: var(--secondary-color);
+    background: var(--hover-color);
+    color: var(--bg-button);
     border-radius: var(--nav-radius);
-    border: 2px solid transparent;
-    transition: 0.2s ease-out;
+    border: 1px solid transparent;
+    transition: 0.33s ease-out;
+    font-weight: 600;
   }
   .seConnecter:hover,
   .connexion:hover {
     background: var(--bg-color);
     color: var(--bg-button);
-    border: 2px solid var(--bg-button);
+    box-shadow: 0px 6px 12px rgb(129, 129, 129);
+
     transition: 0.2s ease-out;
   }
   img {
@@ -49,13 +51,13 @@
   padding: 0.5rem 1rem;
   border-radius: var(--nav-radius);
   color: var(--bg-button);
-  transition: background-color 0.4s ease-out;
+  transition: background-color 0.33s ease-out;
+  font-weight: 600;
 }
 .navbar-links li:hover {
   background-color: var(--bg-button);
-  transition: background-color 0.2s ease-out;
+  transition: background-color 0.15s ease-out;
   background-color: rgba(0, 0, 0, 0.047);
-  font-weight: 600;
 }
 .navbar-burger,
 .role-burger {

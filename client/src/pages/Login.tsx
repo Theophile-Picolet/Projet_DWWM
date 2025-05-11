@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import "../styles/login.css";
 import { useState } from "react";
-import { Bounce, ToastContainer } from "react-toastify";
+import { Flip, ToastContainer } from "react-toastify";
 import { useAuth } from "../services/AuthContext";
 import { loginUser } from "../services/request";
 
@@ -41,7 +41,7 @@ export default function Login() {
                 type="email"
                 name="email"
                 id="email"
-                placeholder="Votre E-mail"
+                placeholder="Votre adresse e-mail"
                 onChange={handleChangeCredentials}
                 value={credentials.email}
               />
@@ -52,7 +52,7 @@ export default function Login() {
                 type="password"
                 name="password"
                 id="password"
-                placeholder="Votre Password"
+                placeholder="Votre mot de passe"
                 onChange={handleChangeCredentials}
                 value={credentials.password}
               />
@@ -73,7 +73,7 @@ export default function Login() {
               draggable
               pauseOnHover
               theme="light"
-              transition={Bounce}
+              transition={Flip}
             />
           </div>
         </form>
