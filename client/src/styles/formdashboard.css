@@ -3,27 +3,41 @@
   flex-direction: column;
   margin: 0 auto;
   width: 50vw;
+  padding: 1rem;
   border-radius: var(--button-radius);
-  background-color: rgba(0, 0, 0, 0.047);
+  background-color: var(--hover-color);
   color: var(--bg-button);
   font-size: 1.15rem;
   font-weight: 600;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0px 4px 10px rgba(0.5, 0.5, 0.5, 0.5);
   input {
-    background-color: var(--bg-color);
+    font-size: 1rem;
+    font-family: var(--title-font);
+    box-shadow: 0px 1px 4px rgba(129, 129, 129, 0.645);
+    border: none;
+    border-radius: 3px;
+    height: 2rem;
+    margin: 0.5rem;
+    padding-left: 0.3rem;
+  }
+  input:active {
+    border: none;
   }
 }
 
 input.submit-form {
   margin: 1rem auto;
-  padding: 1rem;
+  height: 4rem;
+  width: 100%;
   background-color: var(--bg-button);
   border: none;
   color: var(--secondary-color);
-  border: solid 1px var(--bg-button);
   border-radius: var(--button-radius);
-  font-weight: 600;
-  font-size: 1rem;
+  font-weight: 400;
+  font-family: var(--body-font);
+  font-size: 1.2rem;
+  letter-spacing: 1px;
   cursor: pointer;
   transition: 0.3s ease-out;
 }
@@ -32,5 +46,6 @@ input.submit-form:hover {
   background-color: var(--bg-button);
   color: var(--bg-button);
   transition: 0.15s ease-out;
-  background-color: rgba(0, 0, 0, 0.047);
+  background-color: var(--hover-color);
+  box-shadow: 0px 4px 8px rgb(129, 129, 129);
 }

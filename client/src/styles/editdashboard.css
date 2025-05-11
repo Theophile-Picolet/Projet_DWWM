@@ -52,24 +52,27 @@
   padding-bottom: 1rem;
   .confirm-button,
   .cancel-button {
-    padding: 0.5rem 1rem;
+    padding: 1rem 1.5rem;
     border-radius: var(--button-radius);
-    border: 2px solid var(--bg-button);
+    border: none;
+    width: 16rem;
     font-size: 1rem;
     color: var(--bg-color);
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
     background-color: var(--bg-button);
-    font-weight: 600;
-    transition: background-color 0.3s ease-out, color 0.3s ease-out;
+    font-weight: 500;
+    font-family: var(--title-font);
+    transition: all 0.3s;
   }
 
   .confirm-button:hover,
   .cancel-button:hover {
     background-color: var(--bg-button);
     color: var(--bg-button);
-    transition: background-color 0.3s ease-out, color 0.3s ease-out;
-    background-color: rgba(0, 0, 0, 0.047);
+    transition: all 0.3s;
+    background-color: var(--hover-color);
+    box-shadow: 0px 4px 8px rgb(129, 129, 129);
     cursor: pointer;
   }
 }
@@ -83,33 +86,39 @@
   width: 50vw;
   background-color: var(--bg-color);
   color: var(--bg-button);
-  font-size: 1.15rem;
-  font-weight: 700;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  font-family: var(--title-font);
   border-radius: var(--button-radius);
   box-shadow: 0px 0px 10px rgba(0.5, 0.5, 0.5, 0.5);
 
   z-index: 1000;
   button {
-    padding: 1rem;
-    border-radius: var(--button-radius);
-    border: 2px solid var(--bg-button);
+    margin: 1rem auto;
+    height: 4rem;
+    width: 100%;
     background-color: var(--bg-button);
-    color: var(--bg-color);
-    font-size: 1.1rem;
-    margin-top: 1rem;
-    transition: background-color 0.3s ease-out, color 0.3s ease-out;
+    border: none;
+    color: var(--secondary-color);
+    border-radius: var(--button-radius);
+    font-weight: 400;
+    font-family: var(--body-font);
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s ease-out;
   }
   button:hover {
-    background-color: var(--bg-color);
+    background-color: var(--bg-button);
     color: var(--bg-button);
-    transition: background-color 0.15s ease-out, color 0.15s ease-out;
-    cursor: pointer;
+    transition: 0.15s ease-out;
+    background-color: var(--hover-color);
+    box-shadow: 0px 4px 8px rgb(129, 129, 129);
   }
 }
 
 .confirmation-content {
-  padding: 1rem;
+  padding: 2rem 2rem 0;
   text-align: center;
   max-width: 39rem;
   top: 16%;
