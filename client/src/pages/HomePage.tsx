@@ -11,7 +11,7 @@ export default function HomePage() {
     <section className="all-element">
       <section className="top-element">
         <h1>L’original au service du digital</h1>
-        <p>Profitez d' un catalogue qui contient le meilleur du cinéma.</p>
+        <p>Profitez d' un catalogue qui contient le meilleur du cinéma</p>
         <Link to="/signup" className="inscription">
           S'INSCRIRE
         </Link>
