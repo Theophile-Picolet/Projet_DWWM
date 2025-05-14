@@ -1,1 +1,7 @@
-ceci est le text  de test
+User-agent: *
+
+Disallow: /.env
+
+Allow: /client
+
+Sitemap: http://localhost:3000/catalogue
