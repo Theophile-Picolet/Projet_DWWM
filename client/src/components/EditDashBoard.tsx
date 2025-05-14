@@ -241,7 +241,7 @@ export default function EditDashBoard() {
                 value={updatedMovie.landscape_image}
                 onChange={handleChangeMovieForm}
               />
-              <button type="submit">Modifier</button>
+              <button type="submit">MODIFIER</button>
             </form>
           )}
         </div>

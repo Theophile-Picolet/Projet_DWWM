@@ -7,24 +7,25 @@
 }
 
 .dashboard-left > button {
-  width: 8rem;
+  width: 10rem;
   background-color: var(--primary-color);
   border: none;
   color: var(--bg-color);
-  border-radius: 8px;
+  border-radius: 30px;
   font-weight: 600;
   cursor: pointer;
-  padding: 1rem 0.5rem;
+  padding: 1rem;
   font-size: 1.1rem;
   margin-right: 1rem;
   margin-top: 4rem;
   font-family: var(--body-font);
+  letter-spacing: 1px;
   transition: all 0.33s ease-out;
 }
 
 .dashboard-left button:hover {
   color: var(--bg-button);
-  box-shadow: 0px 6px 12px rgb(129, 129, 129);
+  box-shadow: 0px 4px 8px rgb(129, 129, 129);
   background-color: var(--hover-color);
   transition: all 0.15s ease-out;
 }

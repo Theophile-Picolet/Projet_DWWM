@@ -1,14 +1,19 @@
 .dashboard-container {
   display: flex;
   flex-direction: row;
-  gap: 1rem;
+  gap: 1.5rem;
   margin: 0 auto;
 }
 .user-dashboard {
-  background-color: rgba(0, 0, 0, 0.047);
+  background-color: var(--hover-color);
   padding: 1rem;
   border-radius: var(--button-radius);
   color: var(--bg-button);
   width: auto;
   font-size: 1.1rem;
+  box-shadow: 0px 1px 4px rgba(129, 129, 129, 0.645);
+  transition: all 0.3s;
+}
+.user-dashboard:hover {
+  transform: scale(1.1);
 }
