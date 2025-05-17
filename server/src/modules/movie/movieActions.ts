@@ -75,8 +75,12 @@ const edit: RequestHandler = async (req, res, next) => {
 const destroy: RequestHandler = async (req, res, next) => {
   try {
     const movieId = Number(req.params.id);
-    await movieRepository.delete(movieId);
-    res.sendStatus(204);
+    const affectedRows = await movieRepository.delete(movieId);
+    if (affectedRows === 0) {
+      res.sendStatus(404);
+    } else {
+      res.sendStatus(204);
+    }
   } catch (err) {
     next(err);
   }
