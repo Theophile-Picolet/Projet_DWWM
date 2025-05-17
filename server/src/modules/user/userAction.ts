@@ -66,8 +66,12 @@ const edit: RequestHandler = async (req, res, next) => {
 const destroy: RequestHandler = async (req, res, next) => {
   try {
     const userId = Number(req.params.id);
-    await userRepository.delete(userId);
-    res.sendStatus(204);
+    const affectedRows = await userRepository.delete(userId);
+    if (affectedRows === 0) {
+      res.sendStatus(404);
+    } else {
+      res.sendStatus(204);
+    }
   } catch (err) {
     next(err);
   }
@@ -79,8 +83,13 @@ const destroyWatchlistUser: RequestHandler = async (req, res, next) => {
       user_id: req.user.id,
       movie_id: req.body.movie_id,
     };
-    await userRepository.deleteMovieToUserWatchlist(deleteMovie);
-    res.sendStatus(204);
+    const affectedRows =
+      await userRepository.deleteMovieToUserWatchlist(deleteMovie);
+    if (affectedRows === 0) {
+      res.sendStatus(404);
+    } else {
+      res.sendStatus(204);
+    }
   } catch (err) {
     next(err);
   }

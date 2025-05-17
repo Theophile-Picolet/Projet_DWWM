@@ -75,16 +75,17 @@
     justify-content: center;
     align-items: center;
     position: fixed;
-    left: 0;
-    bottom: 0;
-    height: 91vh;
+    right: -100vw;
+    height: 100vh;
+    top: 0;
     background-color: var(--bg-color);
     visibility: hidden;
-    transition: none;
+    transition: all 0.5s ease-out;
   }
   .show-nav .navbar-links {
     right: 0;
     visibility: visible;
+    width: 100vw;
   }
   .navbar-links li {
     display: block;

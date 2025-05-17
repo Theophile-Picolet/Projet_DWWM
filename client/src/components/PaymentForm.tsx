@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Bounce, ToastContainer } from "react-toastify";
+import { Flip, ToastContainer } from "react-toastify";
 import { editPremium } from "../services/request";
 import "../styles/paymentForm.css";
 import { useAuth } from "../services/AuthContext";
@@ -73,69 +73,77 @@ export default function PaymentForm() {
 
   return (
     <section className="payment-form">
+      <h2>Offre Premium</h2>
+      <p>Profiter de l'ensemble des films en souscrivant à l'offre premium.</p>
       <form onSubmit={handleSubmit}>
-        <h2>Paiement</h2>
+        <h3>Paiement</h3>
         <h3>Tous les champs sont obligatoires</h3>
-        <label htmlFor="billed_to">
-          Nom indiqué sur la carte <p>*</p>
-        </label>
-        <input
-          type="text"
-          id="cardName"
-          name="cardName"
-          value={cardData.cardName}
-          onChange={handleChangeForm}
-          placeholder="Votre prénom et nom de famille"
-        />
-        <label htmlFor="payment_details">
-          Détails du paiement <p>*</p>
-        </label>
-        <input
-          type="text"
-          id="cardNumbers"
-          name="cardNumbers"
-          maxLength={19}
-          value={cardData.cardNumbers}
-          onChange={handleChangeCardNumber}
-          placeholder="XXXX XXXX XXXX XXXX"
-        />
-        <div className="expiry-cvv">
+        <div className="payment-name">
+          <label htmlFor="cardName">Nom indiqué sur la carte</label>
           <input
             type="text"
-            id="expireDay"
-            name="expireDay"
-            maxLength={5}
-            value={cardData.expiryDay}
-            onChange={handleChangeExpiryDate}
-            placeholder="MM/YY"
-          />
-          <input
-            type="text"
-            id="cvv"
-            name="cvv"
-            maxLength={3}
-            value={cardData.cvv}
+            id="cardName"
+            name="cardName"
+            value={cardData.cardName}
             onChange={handleChangeForm}
-            placeholder="XXX"
+            placeholder="Votre prénom et nom de famille"
           />
         </div>
-        <label htmlFor="country">
-          Pays <p>*</p>
-        </label>
-        <input
-          list="country-list"
-          id="country"
-          name="country"
-          value={cardData.country}
-          onChange={handleChangeForm}
-          onFocus={handleFocus}
-          placeholder="Sélectionnez votre pays"
-        />
-        <datalist id="country-list">
-          {countries.map((country) => (
-            <option key={country} value={country} />
-          ))}
-        </datalist>
+        <div className="payment-name">
+          <label htmlFor="cardNumbers">Numéros de CB</label>
+          <input
+            type="text"
+            id="cardNumbers"
+            name="cardNumbers"
+            maxLength={19}
+            value={cardData.cardNumbers}
+            onChange={handleChangeCardNumber}
+            placeholder="XXXX XXXX XXXX XXXX"
+          />
+        </div>
+        <div className="expiry-cvv">
+          <div className="payment-left">
+            <label htmlFor="expireDay">Date d'expiration</label>
+            <input
+              type="text"
+              id="expireDay"
+              name="expireDay"
+              maxLength={5}
+              value={cardData.expiryDay}
+              onChange={handleChangeExpiryDate}
+              placeholder="MM/YY"
+            />
+          </div>
+          <div className="payment-right">
+            <label htmlFor="cvv">Code de sécurité</label>
+            <input
+              type="text"
+              id="cvv"
+              name="cvv"
+              maxLength={3}
+              value={cardData.cvv}
+              onChange={handleChangeForm}
+              placeholder="XXX"
+            />
+          </div>
+        </div>
+        <div className="form-country">
+          <label htmlFor="country">Pays</label>
+          <input
+            list="country-list"
+            id="country"
+            name="country"
+            value={cardData.country}
+            onChange={handleChangeForm}
+            onFocus={handleFocus}
+            placeholder="Sélectionnez votre pays"
+          />
+          <datalist id="country-list">
+            {countries.map((country) => (
+              <option key={country} value={country} />
+            ))}
+          </datalist>
+        </div>
         <div className="button-cancel-submit">
           <button type="button" onClick={cancelPayment}>
             Annuler
@@ -153,7 +161,7 @@ export default function PaymentForm() {
           draggable
           pauseOnHover
           theme="light"
-          transition={Bounce}
+          transition={Flip}
         />
       </form>
     </section>
