@@ -22,16 +22,11 @@ export default function Catalogue() {
     movie.genres?.includes("Science-fiction"),
   );
 
-  // Logge la watchlist pour vérification
-  console.info("✅ Watchlist dans Catalogue :", moviesWatchlist);
-
   // Rafraîchissement de la watchlist au montage
   useEffect(() => {
-    console.info("🟢 Rechargement Watchlist au montage");
     refreshWatchlist();
   }, [refreshWatchlist]);
 
-  // Fonction pour supprimer un film de la watchlist
   const handleRemoveFavorite = async (id: number) => {
     try {
       console.info("Suppression du favori, ID :", id);

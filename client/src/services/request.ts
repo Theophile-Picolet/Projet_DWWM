@@ -143,6 +143,7 @@ const loginUser = (
   return axios
     .post(`${API}/api/login`, loginData, { withCredentials: true })
     .then(({ data }) => {
+      console.info(data);
       setRole(data.role);
       setSubscription(data.subscription);
       notifySuccess();
