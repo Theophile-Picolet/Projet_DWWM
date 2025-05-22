@@ -10,7 +10,7 @@ interface FavoriteButtonProps {
 
 export default function FavoriteButton({ id, movie }: FavoriteButtonProps) {
   const { watchlist, refreshWatchlist } = useWatchlist();
-  const [isFavorite, setIsFavorite] = useState(false); // Etat pour savoir si c'est un favori
+  const [isFavorite, setIsFavorite] = useState(false);
   const API = import.meta.env.VITE_API_URL;
 
   // Effect pour mettre à jour l'état du bouton en fonction de la watchlist
@@ -29,7 +29,7 @@ export default function FavoriteButton({ id, movie }: FavoriteButtonProps) {
       );
 
       console.info("Ajout réussi, rafraîchissement de la watchlist...");
-      refreshWatchlist(); // Rafraîchit la watchlist
+      refreshWatchlist();
     } catch (error) {
       console.error("Erreur lors de l'ajout aux favoris :", error);
     }

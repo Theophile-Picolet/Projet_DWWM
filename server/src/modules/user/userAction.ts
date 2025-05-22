@@ -100,7 +100,10 @@ const readWatchlistUser: RequestHandler = async (req, res, next) => {
     const id = Number(req.user.id);
     const user = await userRepository.read(id);
     const watchlist = await userRepository.readWatchlistByUser(id);
-    res.json({ user: user, watchlist: watchlist });
+    res.json({
+      user: { first_name: user.first_name, last_name: user.last_name },
+      watchlist: watchlist,
+    });
   } catch (error) {
     next(error);
   }
