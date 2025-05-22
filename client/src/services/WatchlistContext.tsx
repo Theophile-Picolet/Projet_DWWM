@@ -22,33 +22,26 @@ const WatchlistContext = createContext<WatchlistContextType | undefined>(
 export function WatchlistProvider({ children }: { children: ReactNode }) {
   const [watchlist, setWatchlist] = useState<MovieType[]>([]);
 
-  // 🔄 Fonction pour récupérer la watchlist
   const refreshWatchlist = useCallback(async () => {
     try {
-      console.info("📡 Demande de mise à jour de la watchlist...");
+      console.info("Demande de mise à jour de la watchlist...");
       const response = await axios.get(`${API}/api/users/watchlist`, {
         withCredentials: true,
       });
 
-      console.info("🟢 Réponse API Watchlist :", response.data);
+      console.info(" Réponse API :", response.data);
 
       // Forcer un nouvel array pour s'assurer que React détecte le changement
       setWatchlist([...response.data.watchlist]);
     } catch (error) {
-      console.error("❌ Erreur lors du chargement de la watchlist :", error);
+      console.error("Erreur lors du chargement de la watchlist :", error);
     }
   }, []);
 
-  // 🔄 Charger la watchlist au montage du composant
   useEffect(() => {
-    console.info("📢 Chargement initial de la watchlist...");
+    console.info(" Chargement initial de la watchlist...");
     refreshWatchlist();
   }, [refreshWatchlist]);
-
-  // 🔍 Debug : Voir l'évolution de `watchlist`
-  useEffect(() => {
-    console.info("🎬 Mise à jour Watchlist (Contexte) :", watchlist);
-  }, [watchlist]);
 
   return (
     <WatchlistContext.Provider value={{ watchlist, refreshWatchlist }}>
